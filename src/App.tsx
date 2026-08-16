@@ -1,331 +1,868 @@
-import { useState, useEffect } from 'react'
-import { ArrowRight, Play, CheckCircle2, ChevronRight, Download, Users, Zap, BookOpen, Smartphone, ShieldCheck, Ticket, LayoutDashboard, Store, Heart, CalendarDays, MessageSquare, Video, Sun, UserPlus, FileText, Tv } from 'lucide-react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { 
+  ArrowRight, 
+  CheckCircle2, 
+  Zap, 
+  BookOpen, 
+  Smartphone, 
+  Ticket, 
+  LayoutDashboard, 
+  Store, 
+  Heart, 
+  CalendarDays, 
+  MessageSquare, 
+  Video, 
+  Sun, 
+  UserPlus, 
+  Tv, 
+  ShieldCheck, 
+  QrCode, 
+  Layers, 
+  Globe2, 
+  Flame, 
+  Share2, 
+  CreditCard,
+  MessageCircle,
+  HelpCircle,
+  Building2
+} from 'lucide-react';
+import './App.css';
 
 import mockupImg from './assets/app-mockup.png';
 
-function App() {
-  const [scrolled, setScrolled] = useState(false)
+export function App() {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState<'pwa' | 'studio'>('pwa');
+  
+  // Lead Form
+  const [leadName, setLeadName] = useState('');
+  const [leadPhone, setLeadPhone] = useState('');
+  const [leadChurch, setLeadChurch] = useState('');
+  const [leadMembers, setLeadMembers] = useState('100-500');
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLeadSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const msg = `Olá! Tenho interesse no Ecossistema Faith-Hub para a minha igreja.\n\n*Nome:* ${leadName}\n*Igreja:* ${leadChurch}\n*WhatsApp:* ${leadPhone}\n*Porte:* ${leadMembers} membros`;
+    window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${encodeURIComponent(msg)}`, '_blank');
+  };
 
   return (
     <div className="dot-pattern-bg min-h-screen">
-      {/* Navbar */}
+      
+      {/* NAVBAR */}
       <nav className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-brand">
-          <div style={{ width: '32px', height: '32px', background: 'var(--primary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+          <div style={{
+            width: '36px',
+            height: '36px',
+            background: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)',
+            borderRadius: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontWeight: 900,
+            fontSize: '1.1rem',
+            boxShadow: '0 4px 12px rgba(15, 118, 110, 0.3)'
+          }}>
             FH
           </div>
-          Faith Hub
+          Faith-Hub
         </div>
         
         <div className="nav-links">
           <a href="#inicio" className="nav-link">Início</a>
-          <a href="#quem-somos" className="nav-link">Quem Somos</a>
-          <a href="#solucoes" className="nav-link">Soluções</a>
-          <a href="#gestao" className="nav-link">Faith Hub Studio</a>
-          <a href="#contato" className="nav-link">Contato</a>
+          <a href="#pilares" className="nav-link">Diferenciais</a>
+          <a href="#ecossistema" className="nav-link">Funcionalidades</a>
+          <a href="#comparativo" className="nav-link">Comparativo</a>
+          <a href="#faq" className="nav-link">Dúvidas</a>
         </div>
 
-        <div className="nav-actions">
-          <a href="https://studio.faithhub.com.br" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ marginRight: '1rem', padding: '0.5rem 1rem', textDecoration: 'none' }}>Login</a>
-          <button className="btn btn-primary" style={{ padding: '0.5rem 1rem' }} onClick={() => document.getElementById('contato')?.scrollIntoView({behavior: 'smooth'})}>
-            Falar com Consultor
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <a 
+            href="https://studio.faithhub.com.br" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-outline" 
+            style={{ padding: '0.5rem 1.1rem', fontSize: '0.85rem' }}
+          >
+            Acessar Studio
+          </a>
+          <button 
+            className="btn btn-primary" 
+            style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem' }} 
+            onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Agendar Demonstração
           </button>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section className="hero" id="inicio">
         <div className="container hero-content">
           <div className="hero-text">
             <div className="hero-badge animate-fade-in-up">
-              <Zap size={16} fill="currentColor" />
-              <span>Plataforma Completa desenvolvida por Cristãos</span>
+              <Zap size={15} fill="currentColor" />
+              <span>Tudo em um único lugar • Web & App Integrados</span>
             </div>
             
-            <h1 className="hero-title animate-fade-in-up delay-100">
-              Expanda sua Igreja com um <span>Ecossistema de Tecnologia</span>
+            <h1 className="hero-title animate-fade-in-up">
+              A Plataforma Definitiva para <span>Engajar seu Rebanho</span> e Governar sua Igreja
             </h1>
             
-            <p className="hero-description animate-fade-in-up delay-200">
-              Da palma da mão do membro no App ao portal de tesouraria do administrador. Conecte Células, Loja, Devocionais e Eventos em uma plataforma unificada.
+            <p className="hero-description animate-fade-in-up">
+              Conecte os membros na palma da mão com Bíblia 100% offline, cultos ao vivo, células e cantina mobile, enquanto os pastores gerenciam congregações, voluntários e finanças em tempo real.
             </p>
             
-            <div className="hero-actions animate-fade-in-up delay-300">
-              <button className="btn btn-primary" onClick={() => document.getElementById('contato')?.scrollIntoView({behavior: 'smooth'})}>
-                Ver Demonstração
+            <div className="hero-actions animate-fade-in-up">
+              <button 
+                className="btn btn-primary" 
+                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Solicitar Demonstração VIP
                 <ArrowRight size={18} />
               </button>
-              <button className="btn btn-outline glass" onClick={() => document.getElementById('solucoes')?.scrollIntoView({behavior: 'smooth'})}>
-                Explorar Módulos
+              <button 
+                className="btn btn-outline" 
+                onClick={() => document.getElementById('ecossistema')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explorar Todos os Módulos
               </button>
             </div>
           </div>
 
-          <div className="hero-visual animate-fade-in-up delay-200">
-            {/* Main Phone Mockup */}
-            <div className="mockup-wrapper">
-              <div className="mockup-screen" style={{ background: '#000' }}>
-                <img src={mockupImg} alt="Faith Hub App Screenshot" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            </div>
-
-            {/* Floating Element */}
-            <div className="floating-card glass">
-              <div className="floating-icon">
-                <CheckCircle2 size={24} />
-              </div>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)' }}>100% Sincronizado</div>
-                <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Web e App Integrados</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quem Somos */}
-      <section className="section bg-glass" id="quem-somos">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-visual" style={{ position: 'relative', width: '100%', paddingBottom: '110%' }}>
+          <div className="hero-visual animate-fade-in-up" style={{ position: 'relative' }}>
+            <div style={{
+              background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)',
+              border: '1.5px solid var(--border-color)',
+              borderRadius: '36px',
+              padding: '16px',
+              boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.12)',
+              maxWidth: '360px',
+              margin: '0 auto'
+            }}>
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Comunidade Faith Hub" 
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'block', borderRadius: '32px', objectFit: 'cover', boxShadow: 'var(--shadow-lg)' }}
+                src={mockupImg} 
+                alt="Faith Hub App Preview" 
+                style={{ width: '100%', height: 'auto', borderRadius: '24px', display: 'block' }} 
               />
-              <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', background: 'var(--primary)', color: 'white', padding: '1.5rem', borderRadius: '24px', boxShadow: '0 20px 40px -10px rgba(82, 196, 185, 0.5)', maxWidth: '240px' }}>
-                <div style={{ fontWeight: 800, fontSize: '1.5rem', lineHeight: 1.2, marginBottom: '4px' }}>Tech & Propósito</div>
-                <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Conectando rebanhos em uma única plataforma cloud de excelência.</div>
+            </div>
+
+            {/* Floating Badge 1 */}
+            <div style={{
+              position: 'absolute',
+              top: '15%',
+              left: '-20px',
+              background: '#ffffff',
+              padding: '12px 18px',
+              borderRadius: '20px',
+              border: '1px solid var(--border-color)',
+              boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+              <span style={{ fontSize: '1.4rem' }}>📖</span>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '0.84rem', color: '#0f172a' }}>Bíblia 100% Offline</div>
+                <div style={{ fontSize: '0.72rem', color: '#059669', fontWeight: 700 }}>66 Livros na Íntegra</div>
               </div>
             </div>
-            <div className="about-content">
-              <h2 className="section-title">Nascemos para acabar com as planilhas espalhadas.</h2>
-              <p className="section-text">
-                Assim como as grandes plataformas do mercado, entendemos que uma igreja moderna precisa de ferramentas inteligentes. Mas fomos além: não somos apenas um portal administrativo.
-              </p>
-              <p className="section-text">
-                Construímos um <strong>Ecossistema focado no Engajamento</strong>. Enquanto a secretaria gerencia relatórios e fluxo de caixa pelo Web Portal, o membro leva a igreja no bolso todos os dias, alimentando-se da Palavra e se conectando com sua célula.
-              </p>
-              <ul className="check-list">
-                <li><CheckCircle2 size={20} color="var(--primary)" /> Sem perda de visitantes após os eventos</li>
-                <li><CheckCircle2 size={20} color="var(--primary)" /> Automação do envio de devocionais gamificados</li>
-                <li><CheckCircle2 size={20} color="var(--primary)" /> Fim do desencontro financeiro com PDV na palma da mão</li>
-              </ul>
+
+            {/* Floating Badge 2 */}
+            <div style={{
+              position: 'absolute',
+              bottom: '10%',
+              right: '-15px',
+              background: '#ffffff',
+              padding: '12px 18px',
+              borderRadius: '20px',
+              border: '1px solid var(--border-color)',
+              boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+              <span style={{ fontSize: '1.4rem' }}>🌐</span>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: '0.84rem', color: '#0f172a' }}>Multi-Congregações</div>
+                <div style={{ fontSize: '0.72rem', color: '#0f766e', fontWeight: 700 }}>Sede & Filiais Conectadas</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Soluções (Jornada App) */}
-      <section className="section" id="solucoes">
-        <div className="container text-center">
-          <h2 className="section-title text-center">A Jornada Digital do seu Membro</h2>
-          <p className="section-text text-center mx-auto" style={{ maxWidth: '700px', marginBottom: '3rem' }}>
-            Entregamos um App Premium onde seu Rebanho encontra pasto espiritual fresco todo dia.
-          </p>
-
-          <div className="features-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-            {/* 1. Bíblia */}
-            <div className="feature-card glass">
-              <div className="feature-icon bg-primary-light"><BookOpen size={28} color="var(--primary)" /></div>
-              <h3 className="feature-title">Bíblia Sagrada</h3>
-              <p className="feature-text">Múltiplas versões disponíveis para o membro acompanhar o culto direto do celular, fazer marcações e criar dezenas de anotações pessoais.</p>
-            </div>
-
-            {/* 2. Devocional */}
-            <div className="feature-card glass">
-              <div className="feature-icon" style={{ background: 'rgba(234, 179, 8, 0.1)' }}><Sun size={28} color="#eab308" /></div>
-              <h3 className="feature-title">Devocionais Gamificados</h3>
-              <p className="feature-text">Leituras diárias assíncronas para fortalecer o hábito espiritual. O membro lê, medita e acompanha o seu próprio progresso de leitura anual.</p>
-            </div>
-
-            {/* 3. Loja */}
-            <div className="feature-card glass">
-              <div className="feature-icon bg-primary-light"><Store size={28} color="var(--primary)" /></div>
-              <h3 className="feature-title">Faith Store & Livraria</h3>
-              <p className="feature-text">Vitrine virtual completa. Compre livros, camisetas ou reserve lanches da cantina de forma antecipada pelo App.</p>
-            </div>
-
-            {/* 4. Cursos e Eventos */}
-            <div className="feature-card glass">
-              <div className="feature-icon bg-secondary-light"><CalendarDays size={28} color="var(--secondary)" /></div>
-              <h3 className="feature-title">Cursos e Eventos</h3>
-              <p className="feature-text">Calendário completo da igreja. O membro garante o ingresso ou faz check-in em cursos sem precisar de links externos ou Google Forms.</p>
-            </div>
-
-            {/* 5. Contribuir */}
-            <div className="feature-card glass">
-              <div className="feature-icon" style={{ background: 'rgba(34, 197, 94, 0.1)' }}><Heart size={28} color="#22c55e" /></div>
-              <h3 className="feature-title">Dízimos e Ofertas</h3>
-              <p className="feature-text">Área financeira segura e transparente. Contribua via PIX Cola, anexe comprovantes e apoie campanhas/projetos especiais da igreja local.</p>
-            </div>
-
-            {/* 6. Células */}
-            <div className="feature-card glass">
-              <div className="feature-icon bg-secondary-light"><Users size={28} color="var(--secondary)" /></div>
-              <h3 className="feature-title">Integração de Células</h3>
-              <p className="feature-text">O membro encontra o pequeno grupo mais próximo e, ao se integrar, acessa materiais em PDF, fotos e um mural de recados privado.</p>
-            </div>
-
-            {/* 7. Orações */}
-            <div className="feature-card glass">
-              <div className="feature-icon" style={{ background: 'rgba(139, 92, 246, 0.1)' }}><MessageSquare size={28} color="#8b5cf6" /></div>
-              <h3 className="feature-title">Mural de Pedidos de Oração</h3>
-              <p className="feature-text">Um espaço de intercessão coletiva. Deixe seu pedido restrito à liderança ou público para que a comunidade o apoie em oração.</p>
-            </div>
-
-            {/* 8. Transmissões */}
-            <div className="feature-card glass">
-              <div className="feature-icon" style={{ background: 'rgba(239, 68, 68, 0.1)' }}><Video size={28} color="#ef4444" /></div>
-              <h3 className="feature-title">Transmissões ao Vivo</h3>
-              <p className="feature-text">Integração nativa com Youtube e Podcasts. Assista aos cultos de domingo ou acabe com o silêncio através de playlists e lives 24h.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* A Jornada Web (Admin) */}
-      <section className="section bg-slate" id="gestao">
+      {/* 3 PILARES DO ECOSSISTEMA */}
+      <section className="section" id="pilares" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
-          <div className="admin-grid">
-            <div className="admin-content">
-              <h2 className="section-title">O Faith Hub Studio</h2>
-              <p className="section-text" style={{ fontSize: '1.1rem' }}>
-                Onde tudo ganha vida. Ajuste tudo pelo portal da web e <strong>reflita automaticamente no seu App</strong>. O Studio foi desenhado aos moldes das maiores startups do mundo para que a sua secretaria governe com segurança e em tempo real.
-              </p>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(82, 196, 185, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><LayoutDashboard size={20} color="var(--primary)" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Dashboard</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Monitoramento e dados gerenciais em tempo real.</p></div>
-                </div>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <h2 className="section-title">Por que as igrejas escolhem o Faith-Hub?</h2>
+            <p className="section-subtitle">
+              Criamos uma arquitetura moderna que resolve tanto a experiência do membro quanto a complexidade da liderança.
+            </p>
+          </div>
 
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(34, 197, 94, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><UserPlus size={20} color="#22c55e" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Gestão de Membros</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Criação de usuários e envio de convites de acesso.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(234, 179, 8, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><Store size={20} color="#eab308" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Fluxo de Caixa PDV</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Monitor de pedidos estilo Trello para Loja e Café.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(139, 92, 246, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><Users size={20} color="#8b5cf6" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Estrutura de Células</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Criação e organização ágil dos pequenos grupos.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><FileText size={20} color="#ef4444" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Materiais de Estudo</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Suba PDFs, vídeos e alinhe a visão da congregação.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(56, 189, 248, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><Tv size={20} color="#38bdf8" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Central de Culto</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Fixe canais oficiais e agende transmissões ao vivo.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(249, 115, 22, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><Sun size={20} color="#f97316" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Studio Devocional</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Crie devoções diárias para o rebanho comentar.</p></div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: 'rgba(236, 72, 153, 0.1)', padding: '10px', borderRadius: '12px', height: 'fit-content' }}><Ticket size={20} color="#ec4899" /></div>
-                  <div><h4 style={{ fontSize: '0.95rem', marginBottom: '4px' }}>Eventos & Cursos</h4><p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.3 }}>Loja de ingressos sem limites ou altas taxas externas.</p></div>
-                </div>
-              </div>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             
-            <div className="admin-visual glass">
-              <div className="browser-mockup">
-                <div className="browser-header">
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                  <div className="browser-bar">studio.faithhub.com.br</div>
-                </div>
-                <div className="browser-body">
-                  <div className="sidebar">
-                    <div className="menu-item active">Dashboard</div>
-                    <div className="menu-item">Membros</div>
-                    <div className="menu-item">Células</div>
-                    <div className="menu-item">PDV & Eventos</div>
-                  </div>
-                  <div className="main-content">
-                    <div className="chart-bar"></div>
-                    <div className="chart-bar" style={{ height: '60%' }}></div>
-                    <div className="chart-bar" style={{ height: '80%' }}></div>
-                    <div className="chart-bar" style={{ height: '40%' }}></div>
-                  </div>
-                </div>
+            {/* Pilar 1 */}
+            <div className="feature-card" style={{ padding: '32px 24px' }}>
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
+                <Smartphone size={26} />
               </div>
+              <h3 className="feature-title">1. App do Membro sem Fricção (PWA)</h3>
+              <p className="feature-text">
+                Sem necessidade de baixar via App Store ou Play Store. O membro instala com 1 clique direto pelo navegador, não ocupa memória e tem acesso imediato à Bíblia, cultos e célula.
+              </p>
             </div>
+
+            {/* Pilar 2 */}
+            <div className="feature-card" style={{ padding: '32px 24px' }}>
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
+                <Globe2 size={26} />
+              </div>
+              <h3 className="feature-title">2. Governança Multi-Campi & Redes</h3>
+              <p className="feature-text">
+                Gerencie congregações matriz e filiais em um único painel. Pastores podem ter visões isoladas de suas unidades ou uma visão consolidada de toda a denominação.
+              </p>
+            </div>
+
+            {/* Pilar 3 */}
+            <div className="feature-card" style={{ padding: '32px 24px' }}>
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
+                <ShieldCheck size={26} />
+              </div>
+              <h3 className="feature-title">3. Gestão Pastoral, Células & Finanças</h3>
+              <p className="feature-text">
+                Controle aprovações de filiação em pequenos grupos, escala de partilhas/lanches, venda de ingressos com QR Code e monitor de pedidos da cantina em tempo real.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section bg-gradient" id="contato">
-        <div className="container text-center">
-          <h2 className="section-title text-white">Pronto para digitalizar o seu rebanho?</h2>
-          <p className="section-text text-white mx-auto" style={{ maxWidth: '600px', marginBottom: '2rem' }}>
-            Agende uma demonstração gratuita com nosso consultor e veja ao vivo tudo o que construímos operando em harmonia.
+      {/* SEÇÃO INTERATIVA: TODAS AS FUNCIONALIDADES DETALHADAS */}
+      <section className="section" id="ecossistema">
+        <div className="container" style={{ textAlign: 'center' }}>
+          
+          <h2 className="section-title">O Ecossistema Completo em Detalhes</h2>
+          <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
+            Alterne entre a experiência do membro no smartphone e a central de gestão pastoral.
           </p>
-          <div className="cta-actions">
-            <button className="btn btn-primary" style={{ background: 'white', color: 'var(--primary-dark)', padding: '1rem 2rem', fontSize: '1.1rem' }}>
-              Falar Via WhatsApp
+
+          {/* Abas Interativas */}
+          <div className="eco-tabs-wrapper">
+            <button
+              type="button"
+              className={`eco-tab-btn ${activeTab === 'pwa' ? 'active' : ''}`}
+              onClick={() => setActiveTab('pwa')}
+            >
+              <Smartphone size={18} />
+              App do Membro (PWA Mobile)
+            </button>
+
+            <button
+              type="button"
+              className={`eco-tab-btn ${activeTab === 'pwa' ? '' : 'active'}`}
+              onClick={() => setActiveTab('studio')}
+            >
+              <LayoutDashboard size={18} />
+              Faith-Hub Studio (Portal Web Gestão)
             </button>
           </div>
+
+          {/* =======================================================
+              ABA 1: APP DO MEMBRO (PWA)
+              ======================================================= */}
+          {activeTab === 'pwa' && (
+            <div className="features-grid animate-fade-in-up">
+              
+              {/* 1. Bíblia */}
+              <div className="feature-card">
+                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
+                  <BookOpen size={24} />
+                </div>
+                <h3 className="feature-title">Bíblia Sagrada 100% Real</h3>
+                <p className="feature-text">
+                  66 livros completos (Antigo e Novo Testamento), 1.189 capítulos na íntegra nas versões NVI, ACF e AA. Marca-texto com 4 cores, ajuste de fonte, 3 modos de leitura e funcionamento offline.
+                </p>
+              </div>
+
+              {/* 2. Cultos ao Vivo */}
+              <div className="feature-card">
+                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
+                  <Video size={24} />
+                </div>
+                <h3 className="feature-title">Cultos ao Vivo & Transmissões</h3>
+                <p className="feature-text">
+                  Acesso com 1 toque às transmissões do canal da igreja no YouTube com banner pulsante "AO VIVO" quando o culto estiver acontecendo.
+                </p>
+              </div>
+
+              {/* 3. Palavra Diária */}
+              <div className="feature-card">
+                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
+                  <Sun size={24} />
+                </div>
+                <h3 className="feature-title">Devocionais Diários</h3>
+                <p className="feature-text">
+                  Meditações diárias publicadas pelos pastores com versículo do dia, reflexão bíblica e oração guiada para nutrir a vida espiritual.
+                </p>
+              </div>
+
+              {/* 4. Recepção de Visitantes */}
+              <div className="feature-card">
+                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
+                  <Flame size={24} />
+                </div>
+                <h3 className="feature-title">Recepção de Visitantes</h3>
+                <p className="feature-text">
+                  Formulário acolhedor onde visitantes informam sua congregação de preferência, motivo da visita e pedido de oração para acolhimento da equipe de boas-vindas.
+                </p>
+              </div>
+
+              {/* 5. Células & Redes */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
+                  <Layers size={24} />
+                </div>
+                <h3 className="feature-title">Células, Redes & Escala</h3>
+                <p className="feature-text">
+                  Encontre o grupo ideal por bairro/horário, solicite ingresso na célula, veja o endereço do anfitrião e acompanhe a escala de voluntários do lanche semanal.
+                </p>
+              </div>
+
+              {/* 6. Cantina & PDV Mobile */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
+                  <Store size={24} />
+                </div>
+                <h3 className="feature-title">Cantina & Loja da Igreja</h3>
+                <p className="feature-text">
+                  Cardápio da cantina e livros com carrinho de compras, opção de retirada no balcão ou entrega e pagamento seguro via PIX ou Cartão de Crédito.
+                </p>
+              </div>
+
+              {/* 7. Eventos & Ingressos QR Code */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
+                  <Ticket size={24} />
+                </div>
+                <h3 className="feature-title">Eventos & Ingressos QR Code</h3>
+                <p className="feature-text">
+                  Inscrições em conferências e cursos com carteira digital de ingressos. O membro apresenta o QR Code na portaria para check-in instantâneo.
+                </p>
+              </div>
+
+              {/* 8. Dízimos & Ofertas */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
+                  <Heart size={24} />
+                </div>
+                <h3 className="feature-title">Dízimos & Ofertas por Unidade</h3>
+                <p className="feature-text">
+                  Contribuição financeira segura com geração de chaves PIX dinâmicas por congregação/filial e botão de cópia com 1 clique.
+                </p>
+              </div>
+
+              {/* 9. Mural de Oração */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
+                  <MessageSquare size={24} />
+                </div>
+                <h3 className="feature-title">Mural Comunitário de Oração</h3>
+                <p className="feature-text">
+                  Espaço onde membros compartilham pedidos de oração e os irmãos interagem clicando em "Estou Orando por Você", gerando apoio mútuo.
+                </p>
+              </div>
+
+              {/* 10. Perfil & Foto Nativa */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
+                  <Smartphone size={24} />
+                </div>
+                <h3 className="feature-title">Perfil & Troca de Foto com Câmera</h3>
+                <p className="feature-text">
+                  Edição de dados pessoais de contato e troca rápida de foto usando a câmera frontal nativa, galeria do celular ou 12 avatares ilustrados 3D.
+                </p>
+              </div>
+
+            </div>
+          )}
+
+          {/* =======================================================
+              ABA 2: FAITH-HUB STUDIO (PORTAL WEB)
+              ======================================================= */}
+          {activeTab === 'studio' && (
+            <div className="features-grid animate-fade-in-up">
+              
+              {/* 1. Multi-Congregações */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
+                  <Building2 size={24} />
+                </div>
+                <h3 className="feature-title">Gestão Multi-Congregações (Campi)</h3>
+                <p className="feature-text">
+                  Cadastre todas as filiais e congregações da rede. Filtre relatórios e operações por congregação específica ou visualize o consolido geral.
+                </p>
+              </div>
+
+              {/* 2. Membros & Pastores */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
+                  <UserPlus size={24} />
+                </div>
+                <h3 className="feature-title">Membros & Multi-Alocação Pastoral</h3>
+                <p className="feature-text">
+                  Controle de membros, liderança e pastores. Possibilidade de alocar pastores a múltiplas congregações ou atribuir permissão global da rede.
+                </p>
+              </div>
+
+              {/* 3. Cell Workspace Studio */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
+                  <Layers size={24} />
+                </div>
+                <h3 className="feature-title">Cell Workspace Studio</h3>
+                <p className="feature-text">
+                  Painel de 4 abas por célula: gerenciamento de participantes, aprovação de solicitações de ingresso do app, escala de lanches e dados do encontro.
+                </p>
+              </div>
+
+              {/* 4. Kanban de Pedidos PDV */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
+                  <Store size={24} />
+                </div>
+                <h3 className="feature-title">Cantina & Kanban de Pedidos</h3>
+                <p className="feature-text">
+                  Cadastro de produtos e monitor de pedidos em tempo real estilo Trello para a cozinha/cantina: Novo ➔ Em Preparo ➔ Pronto ➔ Entregue.
+                </p>
+              </div>
+
+              {/* 5. Scanner de Ingressos */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
+                  <QrCode size={24} />
+                </div>
+                <h3 className="feature-title">Scanner QR Code de Portaria</h3>
+                <p className="feature-text">
+                  Criação de eventos, lotes de ingressos e leitor de QR Code integrado no portal para validação instantânea na entrada dos cultos e congressos.
+                </p>
+              </div>
+
+              {/* 6. Central de Transmissões */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
+                  <Tv size={24} />
+                </div>
+                <h3 className="feature-title">Central de Cultos ao Vivo</h3>
+                <p className="feature-text">
+                  Agendamento e acionamento de links de transmissão do YouTube, ativando alertas instantâneos no smartphone de todos os membros.
+                </p>
+              </div>
+
+              {/* 7. Devocionais & Estudos */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
+                  <Sun size={24} />
+                </div>
+                <h3 className="feature-title">Studio de Devocionais</h3>
+                <p className="feature-text">
+                  Editor rico de mensagens e estudos bíblicos com agendamento de publicação para nutrir os membros todos os dias às 6h da manhã.
+                </p>
+              </div>
+
+              {/* 8. Moderação Pastoral */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
+                  <MessageCircle size={24} />
+                </div>
+                <h3 className="feature-title">Mural Pastoral de Orações</h3>
+                <p className="feature-text">
+                  Acompanhamento confidencial dos motivos de oração do rebanho, com atalho direto de WhatsApp para aconselhamento pastoral.
+                </p>
+              </div>
+
+              {/* 9. Branding White-Label */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
+                  <Globe2 size={24} />
+                </div>
+                <h3 className="feature-title">Customização White-Label</h3>
+                <p className="feature-text">
+                  Defina as cores institucionais, logos, banners, dados de endereço e chaves de pagamento (Pagar.me e PIX) exclusivas da sua denominação.
+                </p>
+              </div>
+
+            </div>
+          )}
+
         </div>
       </section>
 
-      {/* Footer */}
+      {/* TABELA COMPARATIVA: TUDO EM UM SÓ LUGAR VS FERRAMENTAS ESPALHADAS */}
+      <section className="section" id="comparativo" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="container">
+          
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-title">Chega de Ferramentas Espalhadas</h2>
+            <p className="section-subtitle">
+              Veja a diferença entre ter o ecossistema Faith-Hub unificado vs tentar conectar 6 ferramentas separadas.
+            </p>
+          </div>
+
+          <div className="comp-table-wrapper">
+            <table className="comp-table">
+              <thead>
+                <tr>
+                  <th>Recurso / Experiência</th>
+                  <th className="comp-highlight">⚡ Faith-Hub Ecossistema</th>
+                  <th>❌ Ferramentas Fragmentadas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Instalação do App</strong></td>
+                  <td className="comp-highlight">Instantânea via PWA (Sem taxas ou App Store)</td>
+                  <td>Baixar 150MB na loja de apps, esquecem a senha</td>
+                </tr>
+                <tr>
+                  <td><strong>Bíblia Sagrada</strong></td>
+                  <td className="comp-highlight">100% Real, 66 Livros, 3 Versões & Offline</td>
+                  <td>Membro precisa alternar para outro app ou não tem</td>
+                </tr>
+                <tr>
+                  <td><strong>Gestão Multi-Campus</strong></td>
+                  <td className="comp-highlight">Sede e Filiais integradas no mesmo painel</td>
+                  <td>Planilhas do Excel separadas que nunca batem</td>
+                </tr>
+                <tr>
+                  <td><strong>Células & Lanches</strong></td>
+                  <td className="comp-highlight">Workspace com aprovação e escala de comunhão</td>
+                  <td>Grupos caóticos de WhatsApp onde mensagens se perdem</td>
+                </tr>
+                <tr>
+                  <td><strong>Cantina & Cafeteria</strong></td>
+                  <td className="comp-highlight">Cardápio digital, PIX e Kanban na cozinha</td>
+                  <td>Fichinhas de papel, filas longas e desencontro de caixa</td>
+                </tr>
+                <tr>
+                  <td><strong>Ingressos de Eventos</strong></td>
+                  <td className="comp-highlight">Carteira digital + Scanner QR Code sem taxa extra</td>
+                  <td>Taxas abusivas de 10% a 15% em ticketeiras externas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="section" id="faq">
+        <div className="container">
+          
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-title">Perguntas Frequentes</h2>
+            <p className="section-subtitle">
+              Tire suas dúvidas sobre como o Faith-Hub transforma o dia a dia da sua comunidade.
+            </p>
+          </div>
+
+          <div className="faq-grid">
+            
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                Como os membros instalam o aplicativo?
+              </div>
+              <div className="faq-a">
+                O app é uma Progressive Web App (PWA) de última geração. O membro acessa o link da igreja pelo celular e clica em "Adicionar à Tela de Início". Funciona tanto em iPhones (iOS) quanto Androids sem precisar de downloads pesados.
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                Minha igreja tem várias filiais. Como funciona?
+              </div>
+              <div className="faq-a">
+                O Faith-Hub foi desenhado desde o início para operações multi-campi. Cada filial tem seus dados, pastores e cantinas isoladas, enquanto a liderança geral da Sede acompanha tudo de forma consolidada.
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                A Bíblia Sagrada funciona sem internet?
+              </div>
+              <div className="faq-a">
+                Sim! Todos os 66 livros bíblicos e 1.189 capítulos (traduções NVI, ACF e AA) ficam salvos no cache do dispositivo, permitindo leitura rápida e marcação de versículos em qualquer lugar.
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                Como a liderança gerencia os grupos e células?
+              </div>
+              <div className="faq-a">
+                Pelo Cell Workspace Studio, os líderes e pastores aprovam novos membros que solicitaram ingresso pelo app, gerenciam contatos e organizam a escala de voluntários para a comunhão semanal.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* FORMULÁRIO DE SOLICITAÇÃO DE DEMONSTRAÇÃO VIP */}
+      <section className="section" id="demonstracao" style={{ background: 'linear-gradient(135deg, #0f766e 0%, #115e59 100%)', color: '#ffffff' }}>
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          
+          <span style={{ background: 'rgba(255, 255, 255, 0.15)', padding: '6px 16px', borderRadius: '999px', fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            Transformação Digital para o seu Ministério
+          </span>
+
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, color: '#ffffff', marginTop: '16px', letterSpacing: '-0.03em' }}>
+            Pronto para ver o Faith-Hub na prática?
+          </h2>
+
+          <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.08rem', margin: '12px 0 32px 0' }}>
+            Preencha seus dados abaixo e nosso especialista apresentará uma demonstração personalizada com a identidade da sua congregação.
+          </p>
+
+          <form 
+            onSubmit={handleLeadSubmit}
+            style={{
+              background: '#ffffff',
+              borderRadius: '28px',
+              padding: '32px 28px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)',
+              textAlign: 'left',
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px'
+            }}
+          >
+            <div>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+                Seu Nome Completo *
+              </label>
+              <input
+                type="text"
+                value={leadName}
+                onChange={e => setLeadName(e.target.value)}
+                required
+                placeholder="Ex: Pastor Marcos Silva"
+                style={{
+                  width: '100%',
+                  padding: '12px 14px',
+                  borderRadius: '12px',
+                  background: '#f8fafc',
+                  border: '1.5px solid var(--border-color)',
+                  fontSize: '0.90rem',
+                  outline: 'none',
+                  color: '#0f172a'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+                WhatsApp com DDD *
+              </label>
+              <input
+                type="text"
+                value={leadPhone}
+                onChange={e => setLeadPhone(e.target.value)}
+                required
+                placeholder="(11) 99999-9999"
+                style={{
+                  width: '100%',
+                  padding: '12px 14px',
+                  borderRadius: '12px',
+                  background: '#f8fafc',
+                  border: '1.5px solid var(--border-color)',
+                  fontSize: '0.90rem',
+                  outline: 'none',
+                  color: '#0f172a'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+                Nome da Igreja / Denominação *
+              </label>
+              <input
+                type="text"
+                value={leadChurch}
+                onChange={e => setLeadChurch(e.target.value)}
+                required
+                placeholder="Ex: Comunidade da Fé"
+                style={{
+                  width: '100%',
+                  padding: '12px 14px',
+                  borderRadius: '12px',
+                  background: '#f8fafc',
+                  border: '1.5px solid var(--border-color)',
+                  fontSize: '0.90rem',
+                  outline: 'none',
+                  color: '#0f172a'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+                Número Estimado de Membros
+              </label>
+              <select
+                value={leadMembers}
+                onChange={e => setLeadMembers(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 14px',
+                  borderRadius: '12px',
+                  background: '#f8fafc',
+                  border: '1.5px solid var(--border-color)',
+                  fontSize: '0.90rem',
+                  outline: 'none',
+                  color: '#0f172a',
+                  fontWeight: 600
+                }}
+              >
+                <option value="Até 100">Até 100 membros</option>
+                <option value="100-500">100 a 500 membros</option>
+                <option value="500-2000">500 a 2.000 membros</option>
+                <option value="Mais de 2000">Mais de 2.000 membros (Multi-Campi)</option>
+              </select>
+            </div>
+
+            <div style={{ gridColumn: 'span 2', marginTop: '12px' }}>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{
+                  width: '100%',
+                  padding: '16px',
+                  fontSize: '1.05rem',
+                  fontWeight: 900,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '8px'
+                }}
+              >
+                Solicitar Demonstração no WhatsApp
+                <ArrowRight size={20} />
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </section>
+
+      {/* FOOTER */}
       <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div style={{ width: '40px', height: '40px', background: 'var(--primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
-                FH
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '36px',
+                  height: '36px',
+                  background: 'var(--primary)',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontWeight: 900
+                }}>
+                  FH
+                </div>
+                <h4 style={{ margin: 0 }}>Faith-Hub</h4>
               </div>
-              <h4>Faith Hub</h4>
-              <p>Construindo pontes tecnológicas para igrejas locais que amam pessoas.</p>
+              <p style={{ marginTop: '12px' }}>
+                O ecossistema definitivo para a igreja local. Conectando pessoas e unificando a gestão pastoral em tempo real.
+              </p>
             </div>
+
             <div>
-              <h5>Ecossistema</h5>
-              <a href="#">Super App (Membros)</a>
-              <a href="#">Gestão de Células</a>
-              <a href="#">Loja e PDV On-line</a>
-              <a href="#">Transmissões ao Vivo</a>
+              <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Ecossistema</h5>
+              <a href="#ecossistema">App do Membro (PWA)</a>
+              <a href="#ecossistema">Faith-Hub Studio Web</a>
+              <a href="#ecossistema">Bíblia Sagrada Offline</a>
+              <a href="#ecossistema">Cell Workspace</a>
+              <a href="#ecossistema">Cantina & PDV Mobile</a>
             </div>
+
             <div>
-              <h5>Empresa</h5>
-              <a href="#">Quem Somos</a>
-              <a href="#">Termos de Uso</a>
-              <a href="#">Privacidade</a>
+              <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Institucional</h5>
+              <a href="#inicio">Início</a>
+              <a href="#pilares">Diferenciais</a>
+              <a href="#comparativo">Comparativo</a>
+              <a href="#faq">Perguntas Frequentes</a>
+              <a href="https://studio.faithhub.com.br" target="_blank" rel="noopener noreferrer">Acesso Studio</a>
             </div>
+
             <div>
-              <h5>Contato</h5>
-              <a href="#">suporte@faithhub.com</a>
-              <p>(00) 90000-0000</p>
+              <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Fale Conosco</h5>
+              <p style={{ margin: 0, fontSize: '0.88rem' }}>contato@faithhub.com.br</p>
+              <p style={{ margin: '6px 0 0 0', fontSize: '0.88rem' }}>São Paulo, Brasil</p>
+              <div style={{ marginTop: '16px' }}>
+                <a 
+                  href="https://api.whatsapp.com/send?phone=5511999999999" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                  style={{ color: '#ffffff', borderColor: '#334155', padding: '8px 16px', fontSize: '0.80rem' }}
+                >
+                  💬 Suporte WhatsApp
+                </a>
+              </div>
             </div>
           </div>
+
           <div className="footer-bottom">
-            <p>&copy; 2026 Faith Hub Ecossistema. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Faith-Hub Ecossistema. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
