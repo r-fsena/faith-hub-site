@@ -587,18 +587,6 @@ export function App() {
                 </p>
               </div>
 
-              {/* 12. Propostas Digitais & SaaS */}
-              <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Expansão & SaaS</span>
-                <div className="feature-icon-wrapper" style={{ background: 'rgba(2, 132, 199, 0.1)', color: '#0284c7' }}>
-                  <FileText size={24} />
-                </div>
-                <h3 className="feature-title">Propostas Digitais & Provisionamento</h3>
-                <p className="feature-text">
-                  Gerador de propostas eletrônicas públicas com aceite digital e provisionamento automático instantâneo de instâncias na nuvem AWS.
-                </p>
-              </div>
-
             </div>
           )}
 
