@@ -24,7 +24,8 @@ import {
   CreditCard,
   MessageCircle,
   HelpCircle,
-  Building2
+  Building2,
+  Baby
 } from 'lucide-react';
 import './App.css';
 
@@ -281,61 +282,96 @@ export function App() {
             </button>
           </div>
 
+          {/* Informative Security & Access Pill */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '10px 22px',
+            background: 'rgba(15, 118, 110, 0.07)',
+            borderRadius: 999,
+            border: '1px solid rgba(15, 118, 110, 0.18)',
+            marginBottom: '2.5rem',
+            fontSize: '0.86rem',
+            color: '#0f766e',
+            fontWeight: 700,
+            maxWidth: '780px',
+            lineHeight: 1.45,
+            textAlign: 'left'
+          }}>
+            <span style={{ fontSize: '1.2rem' }}>💡</span>
+            <span>
+              <strong>Acesso Inteligente & Seguro:</strong> Apenas a <strong>Bíblia Sagrada</strong>, a <strong>Recepção de Visitantes</strong> e o <strong>Módulo Kids</strong> estão disponíveis livremente sem login. Todas as demais funções são exclusivas e protegidas na <strong>Área do Membro</strong>.
+            </span>
+          </div>
+
           {/* =======================================================
               ABA 1: APP DO MEMBRO (PWA)
               ======================================================= */}
           {activeTab === 'pwa' && (
             <div className="features-grid animate-fade-in-up">
               
-              {/* 1. Bíblia */}
+              {/* 1. Bíblia Sagrada */}
               <div className="feature-card">
                 <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <BookOpen size={24} />
                 </div>
-                <h3 className="feature-title">Bíblia Sagrada 100% Real</h3>
+                <h3 className="feature-title">Bíblia Sagrada 100% Offline</h3>
                 <p className="feature-text">
-                  66 livros completos (Antigo e Novo Testamento), 1.189 capítulos na íntegra nas versões NVI, ACF e AA. Marca-texto com 4 cores, ajuste de fonte, 3 modos de leitura e funcionamento offline.
+                  66 livros completos (Antigo e Novo Testamento), 1.189 capítulos nas versões NVI, ACF e AA. Marca-texto com 4 cores, ajuste de fonte, 3 modos de leitura e funcionamento 100% offline.
                 </p>
               </div>
 
-              {/* 2. Cultos ao Vivo */}
-              <div className="feature-card">
-                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
-                <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
-                  <Video size={24} />
-                </div>
-                <h3 className="feature-title">Cultos ao Vivo & Transmissões</h3>
-                <p className="feature-text">
-                  Acesso com 1 toque às transmissões do canal da igreja no YouTube com banner pulsante "AO VIVO" quando o culto estiver acontecendo.
-                </p>
-              </div>
-
-              {/* 3. Palavra Diária */}
-              <div className="feature-card">
-                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
-                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
-                  <Sun size={24} />
-                </div>
-                <h3 className="feature-title">Devocionais Diários</h3>
-                <p className="feature-text">
-                  Meditações diárias publicadas pelos pastores com versículo do dia, reflexão bíblica e oração guiada para nutrir a vida espiritual.
-                </p>
-              </div>
-
-              {/* 4. Recepção de Visitantes */}
+              {/* 2. Recepção de Visitantes */}
               <div className="feature-card">
                 <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
                   <Flame size={24} />
                 </div>
-                <h3 className="feature-title">Recepção de Visitantes</h3>
+                <h3 className="feature-title">Recepção de Visitantes ("Sou Novo Aqui")</h3>
                 <p className="feature-text">
-                  Formulário acolhedor onde visitantes informam sua congregação de preferência, motivo da visita e pedido de oração para acolhimento da equipe de boas-vindas.
+                  Formulário acolhedor onde visitantes informam sua congregação de preferência, motivo da visita e pedido de oração para acolhimento imediato da liderança.
                 </p>
               </div>
 
-              {/* 5. Células & Redes */}
+              {/* 3. Módulo Kids & Check-in Expresso */}
+              <div className="feature-card">
+                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>
+                  <Baby size={24} />
+                </div>
+                <h3 className="feature-title">Ministério Kids & Check-in de Crianças</h3>
+                <p className="feature-text">
+                  Totem e registro ágil de entrada de crianças para membros e visitantes, geração de PIN de segurança, crachás digitais e sistema de alerta aos responsáveis.
+                </p>
+              </div>
+
+              {/* 4. Cultos ao Vivo */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
+                  <Video size={24} />
+                </div>
+                <h3 className="feature-title">Cultos ao Vivo & Transmissões</h3>
+                <p className="feature-text">
+                  Acesso exclusivo com 1 toque às transmissões do canal da igreja no YouTube com banner pulsante "AO VIVO" durante as celebrações oficiais.
+                </p>
+              </div>
+
+              {/* 5. Palavra Diária & Devocionais */}
+              <div className="feature-card">
+                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
+                  <Sun size={24} />
+                </div>
+                <h3 className="feature-title">Devocionais Diários & Estudos</h3>
+                <p className="feature-text">
+                  Meditações diárias publicadas pelos pastores com versículo do dia, reflexão bíblica e oração guiada para nutrir a vida espiritual da comunidade.
+                </p>
+              </div>
+
+              {/* 6. Células & Redes */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
@@ -347,7 +383,7 @@ export function App() {
                 </p>
               </div>
 
-              {/* 6. Cantina & PDV Mobile */}
+              {/* 7. Cantina & PDV Mobile */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
@@ -359,7 +395,7 @@ export function App() {
                 </p>
               </div>
 
-              {/* 7. Eventos & Ingressos QR Code */}
+              {/* 8. Eventos & Ingressos QR Code */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
@@ -371,7 +407,7 @@ export function App() {
                 </p>
               </div>
 
-              {/* 8. Dízimos & Ofertas */}
+              {/* 9. Dízimos & Ofertas */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
@@ -383,7 +419,7 @@ export function App() {
                 </p>
               </div>
 
-              {/* 9. Mural de Oração */}
+              {/* 10. Mural de Oração */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
@@ -395,15 +431,15 @@ export function App() {
                 </p>
               </div>
 
-              {/* 10. Perfil & Foto Nativa */}
+              {/* 11. Perfil & Carteirinha */}
               <div className="feature-card">
                 <span className="badge-pill badge-member">🔒 Área do Membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Smartphone size={24} />
                 </div>
-                <h3 className="feature-title">Perfil & Troca de Foto com Câmera</h3>
+                <h3 className="feature-title">Perfil & Carteirinha Digital</h3>
                 <p className="feature-text">
-                  Edição de dados pessoais de contato e troca rápida de foto usando a câmera frontal nativa, galeria do celular ou 12 avatares ilustrados 3D.
+                  Identificação oficial de membro com foto nativa, histórico de batismo, congregação de vínculo e dados de contato atualizados.
                 </p>
               </div>
 
