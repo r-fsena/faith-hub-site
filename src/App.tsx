@@ -116,7 +116,7 @@ export function App() {
             </div>
             
             <h1 className="hero-title animate-fade-in-up">
-              A Plataforma Definitiva para <span>Engajar seu Rebanho</span> e Governar sua Igreja
+              A plataforma unificada para <span>liderar, pastorear</span> e engajar sua comunidade.
             </h1>
             
             <p className="hero-description animate-fade-in-up">
