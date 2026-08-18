@@ -52,10 +52,15 @@ export function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const openWhatsAppLead = (customText?: string) => {
+    const defaultMsg = customText || 'Olá! Gostaria de falar com um especialista do Faith-Hub e conhecer a plataforma para a minha igreja.';
+    window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${encodeURIComponent(defaultMsg)}`, '_blank');
+  };
+
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Olá! Tenho interesse no Ecossistema Faith-Hub para a minha igreja.\n\n*Nome:* ${leadName}\n*Igreja:* ${leadChurch}\n*WhatsApp:* ${leadPhone}\n*Porte:* ${leadMembers} membros`;
-    window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${encodeURIComponent(msg)}`, '_blank');
+    openWhatsAppLead(msg);
   };
 
   return (
@@ -92,11 +97,12 @@ export function App() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <a 
-            href="https://studio.faithhub.com.br" 
+            href="https://studio.faithhubs.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn btn-outline" 
+            className="btn btn-outline btn-studio-pulse" 
             style={{ padding: '0.5rem 1.1rem', fontSize: '0.85rem' }}
+            title="Acessar o Portal Web de Gestão Pastoral"
           >
             Acessar Studio
           </a>
@@ -105,7 +111,7 @@ export function App() {
             style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem' }} 
             onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Agendar Demonstração
+            Falar com Especialista
           </button>
         </div>
       </nav>
@@ -140,6 +146,16 @@ export function App() {
                 onClick={() => document.getElementById('ecossistema')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explorar Todos os Módulos
+              </button>
+            </div>
+
+            <div className="animate-fade-in-up" style={{ marginTop: '14px' }}>
+              <button
+                type="button"
+                onClick={() => openWhatsAppLead('Olá! Gostaria de uma demonstração VIP do Faith-Hub para a minha igreja.')}
+                style={{ background: 'none', border: 'none', color: '#0f766e', fontWeight: 800, fontSize: '0.86rem', display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}
+              >
+                <MessageCircle size={17} color="#25d366" /> Ou fale agora com um consultor no WhatsApp ➔
               </button>
             </div>
           </div>
@@ -251,6 +267,41 @@ export function App() {
               </p>
             </div>
 
+          </div>
+
+          {/* Mid-Page Conversion Banner 1 */}
+          <div className="conversion-banner animate-fade-in-up" style={{ marginTop: '48px' }}>
+            <div style={{ maxWidth: '580px', textAlign: 'left' }}>
+              <span style={{ fontSize: '0.74rem', fontWeight: 800, letterSpacing: '0.08em', color: '#5eead4', textTransform: 'uppercase' }}>
+                Atendimento Consultivo para Pastores & Liderança
+              </span>
+              <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#ffffff', margin: '8px 0', letterSpacing: '-0.02em' }}>
+                Quer ver como o Faith-Hub funciona na realidade da sua igreja?
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                Converse diretamente com nossos consultores, tire dúvidas sobre migração de dados e receba uma demonstração VIP personalizada.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                className="btn btn-whatsapp-cta"
+                onClick={() => openWhatsAppLead('Olá! Gostaria de agendar uma demonstração personalizada com um especialista do Faith-Hub.')}
+                style={{ padding: '13px 24px', fontSize: '0.90rem', fontWeight: 800 }}
+              >
+                <MessageCircle size={18} />
+                Falar com Especialista Agora
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+                style={{ borderColor: 'rgba(255,255,255,0.4)', color: '#ffffff', padding: '13px 20px', fontSize: '0.90rem' }}
+              >
+                Preencher Formulário
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -658,6 +709,31 @@ export function App() {
             </table>
           </div>
 
+          {/* Mid-Page Conversion Banner 2 */}
+          <div className="conversion-banner" style={{ marginTop: '40px', background: 'linear-gradient(135deg, #0f172a 0%, #042f2e 100%)' }}>
+            <div style={{ maxWidth: '600px', textAlign: 'left' }}>
+              <span style={{ fontSize: '0.74rem', fontWeight: 800, letterSpacing: '0.08em', color: '#38bdf8', textTransform: 'uppercase' }}>
+                🚀 Migração Simples & Suporte Total
+              </span>
+              <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#ffffff', margin: '8px 0' }}>
+                Elimine planilhas soltas e múltiplos custos ainda esta semana.
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                Nossa equipe cuida de toda a configuração inicial e treinamento da sua liderança e voluntários para sua igreja começar em até 24h.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className="btn btn-whatsapp-cta"
+              onClick={() => openWhatsAppLead('Olá! Quero entender como funciona a migração para o Faith-Hub na minha igreja.')}
+              style={{ padding: '14px 26px', fontSize: '0.95rem', fontWeight: 800 }}
+            >
+              <MessageCircle size={18} />
+              Falar com Consultor Agora ➔
+            </button>
+          </div>
+
         </div>
       </section>
 
@@ -857,11 +933,41 @@ export function App() {
                   gap: '8px'
                 }}
               >
-                Solicitar Demonstração no WhatsApp
+                Solicitar Demonstração VIP
                 <ArrowRight size={20} />
               </button>
             </div>
           </form>
+
+          {/* Direct Instant WhatsApp Alternative */}
+          <div style={{ marginTop: '28px', textAlign: 'center' }}>
+            <span style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.90rem' }}>
+              Prefere atendimento comercial imediato sem preencher formulário?
+            </span>
+            <div style={{ marginTop: '10px' }}>
+              <button
+                type="button"
+                onClick={() => openWhatsAppLead('Olá! Gostaria de falar com um especialista comercial do Faith-Hub agora.')}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  border: '1.5px solid rgba(255, 255, 255, 0.35)',
+                  color: '#ffffff',
+                  padding: '10px 22px',
+                  borderRadius: 999,
+                  fontWeight: 800,
+                  fontSize: '0.88rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <MessageCircle size={18} color="#25d366" />
+                Conversar Direto no WhatsApp com um Consultor ➔
+              </button>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -907,7 +1013,7 @@ export function App() {
               <a href="#pilares">Diferenciais</a>
               <a href="#comparativo">Comparativo</a>
               <a href="#faq">Perguntas Frequentes</a>
-              <a href="https://studio.faithhub.com.br" target="_blank" rel="noopener noreferrer">Acesso Studio</a>
+              <a href="https://studio.faithhubs.com" target="_blank" rel="noopener noreferrer">Acesso Studio</a>
             </div>
 
             <div>
@@ -915,15 +1021,14 @@ export function App() {
               <p style={{ margin: 0, fontSize: '0.88rem' }}>contato@faithhub.com.br</p>
               <p style={{ margin: '6px 0 0 0', fontSize: '0.88rem' }}>São Paulo, Brasil</p>
               <div style={{ marginTop: '16px' }}>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=5511999999999" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  type="button"
+                  onClick={() => openWhatsAppLead('Olá! Preciso de suporte ou informações comerciais do Faith-Hub.')}
                   className="btn btn-outline"
-                  style={{ color: '#ffffff', borderColor: '#334155', padding: '8px 16px', fontSize: '0.80rem' }}
+                  style={{ color: '#ffffff', borderColor: '#334155', padding: '8px 16px', fontSize: '0.80rem', cursor: 'pointer' }}
                 >
                   💬 Suporte WhatsApp
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -933,6 +1038,23 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {/* FLOATING WHATSAPP BUTTON (ALWAYS ACCESSIBLE) */}
+      <button
+        type="button"
+        onClick={() => openWhatsAppLead('Olá! Estou no site do Faith-Hub e gostaria de falar com um especialista.')}
+        className="floating-whatsapp-btn"
+        title="Fale ao vivo com nosso especialista no WhatsApp"
+        aria-label="Falar com Especialista no WhatsApp"
+      >
+        <div className="whatsapp-icon-circle">
+          <MessageCircle size={22} color="#ffffff" />
+        </div>
+        <div className="whatsapp-text-box">
+          <span className="whatsapp-badge-online"><span className="online-dot" /> Online Agora</span>
+          <span className="whatsapp-title">Falar com Especialista</span>
+        </div>
+      </button>
 
     </div>
   );
