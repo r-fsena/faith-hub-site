@@ -54,7 +54,7 @@ export function App() {
 
   const openWhatsAppLead = (customText?: string) => {
     const defaultMsg = customText || 'Olá! Gostaria de falar com um especialista do Faith-Hub e conhecer a plataforma para a minha igreja.';
-    window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${encodeURIComponent(defaultMsg)}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=5548991079478&text=${encodeURIComponent(defaultMsg)}`, '_blank');
   };
 
   const handleLeadSubmit = (e: React.FormEvent) => {
@@ -1019,7 +1019,7 @@ export function App() {
             <div>
               <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Fale Conosco</h5>
               <p style={{ margin: 0, fontSize: '0.88rem' }}>contato@faithhub.com.br</p>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.88rem' }}>São Paulo, Brasil</p>
+              <p style={{ margin: '6px 0 0 0', fontSize: '0.88rem' }}>WhatsApp: (48) 9 9107-9478</p>
               <div style={{ marginTop: '16px' }}>
                 <button 
                   type="button"
@@ -1027,7 +1027,7 @@ export function App() {
                   className="btn btn-outline"
                   style={{ color: '#ffffff', borderColor: '#334155', padding: '8px 16px', fontSize: '0.80rem', cursor: 'pointer' }}
                 >
-                  💬 Suporte WhatsApp
+                  💬 (48) 9 9107-9478
                 </button>
               </div>
             </div>
