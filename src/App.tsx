@@ -25,7 +25,10 @@ import {
   MessageCircle,
   HelpCircle,
   Building2,
-  Baby
+  Baby,
+  FileText,
+  BarChart3,
+  Users
 } from 'lucide-react';
 import './App.css';
 
@@ -452,33 +455,57 @@ export function App() {
           {activeTab === 'studio' && (
             <div className="features-grid animate-fade-in-up">
               
-              {/* 1. Multi-Congregações */}
+              {/* 1. Ministério Kids & Totens */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Totem & Segurança Kids</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>
+                  <Baby size={24} />
+                </div>
+                <h3 className="feature-title">Ministério Kids & Totem de Check-in</h3>
+                <p className="feature-text">
+                  Totem ágil de entrada de crianças (membros e visitantes), geração de PIN diário de 4 dígitos, crachás digitais, checkout seguro por QR Code e alertas em tempo real aos pais via App e WhatsApp.
+                </p>
+              </div>
+
+              {/* 2. Relatórios & Auditoria */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Auditoria & Inteligência</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
+                  <BarChart3 size={24} />
+                </div>
+                <h3 className="feature-title">Relatórios & Auditoria de Check-ins</h3>
+                <p className="feature-text">
+                  Histórico completo de presenças, devoluções, PINs e chamados aos pais. Painel de KPIs ao vivo com exportação em 1 clique para Excel (.csv com BOM) e Impressão formatada em PDF.
+                </p>
+              </div>
+
+              {/* 3. Multi-Congregações */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Multi-Campus Blindado</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Building2 size={24} />
                 </div>
                 <h3 className="feature-title">Gestão Multi-Congregações (Campi)</h3>
                 <p className="feature-text">
-                  Cadastre todas as filiais e congregações da rede. Filtre relatórios e operações por congregação específica ou visualize o consolido geral.
+                  Cadastre todas as filiais e congregações da rede. Segregação de acesso automática por liderança autorizada e visão global consolidada para pastores seniores.
                 </p>
               </div>
 
-              {/* 2. Membros & Pastores */}
+              {/* 4. Membros & Famílias */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Pastoreio & Famílias</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
-                  <UserPlus size={24} />
+                  <Users size={24} />
                 </div>
-                <h3 className="feature-title">Membros & Multi-Alocação Pastoral</h3>
+                <h3 className="feature-title">Membros & Agrupamento Familiar</h3>
                 <p className="feature-text">
-                  Controle de membros, liderança e pastores. Possibilidade de alocar pastores a múltiplas congregações ou atribuir permissão global da rede.
+                  Controle de membros, liderança e pastores. Agrupamento familiar automático de crianças com seus responsáveis na base de dados para conferência e segurança.
                 </p>
               </div>
 
-              {/* 3. Cell Workspace Studio */}
+              {/* 5. Cell Workspace Studio */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Pequenos Grupos</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
                   <Layers size={24} />
                 </div>
@@ -488,21 +515,21 @@ export function App() {
                 </p>
               </div>
 
-              {/* 4. Kanban de Pedidos PDV */}
+              {/* 6. Kanban de Pedidos PDV */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Cantina & Livraria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
                   <Store size={24} />
                 </div>
                 <h3 className="feature-title">Cantina & Kanban de Pedidos</h3>
                 <p className="feature-text">
-                  Cadastro de produtos e monitor de pedidos em tempo real estilo Trello para a cozinha/cantina: Novo ➔ Em Preparo ➔ Pronto ➔ Entregue.
+                  Cadastro de produtos e monitor de pedidos em tempo real estilo Trello para a cozinha/cantina: Novo ➔ Em Preparo ➔ Pronto ➔ Entregue, com split financeiro.
                 </p>
               </div>
 
-              {/* 5. Scanner de Ingressos */}
+              {/* 7. Scanner de Ingressos */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Ticketing & Portaria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
                   <QrCode size={24} />
                 </div>
@@ -512,9 +539,9 @@ export function App() {
                 </p>
               </div>
 
-              {/* 6. Central de Transmissões */}
+              {/* 8. Central de Transmissões */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Mídia & Transmissões</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
                   <Tv size={24} />
                 </div>
@@ -524,39 +551,51 @@ export function App() {
                 </p>
               </div>
 
-              {/* 7. Devocionais & Estudos */}
+              {/* 9. Devocionais & Estudos */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Nutrição Espiritual</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
                   <Sun size={24} />
                 </div>
-                <h3 className="feature-title">Studio de Devocionais</h3>
+                <h3 className="feature-title">Studio de Devocionais & Estudos</h3>
                 <p className="feature-text">
-                  Editor rico de mensagens e estudos bíblicos com agendamento de publicação para nutrir os membros todos os dias às 6h da manhã.
+                  Editor rico de mensagens e estudos bíblicos com agendamento de publicação para nutrir os membros todos os dias com a Palavra pastoral.
                 </p>
               </div>
 
-              {/* 8. Moderação Pastoral */}
+              {/* 10. Moderação Pastoral */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Acolhimento Pastoral</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
                   <MessageCircle size={24} />
                 </div>
                 <h3 className="feature-title">Mural Pastoral de Orações</h3>
                 <p className="feature-text">
-                  Acompanhamento confidencial dos motivos de oração do rebanho, com atalho direto de WhatsApp para aconselhamento pastoral.
+                  Acompanhamento confidencial dos motivos de oração do rebanho, com atalho direto de WhatsApp para aconselhamento pastoral imediato.
                 </p>
               </div>
 
-              {/* 9. Branding White-Label */}
+              {/* 11. Branding White-Label */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Gestão Administrativa</span>
+                <span className="badge-pill badge-admin">⚡ Identidade Própria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Globe2 size={24} />
                 </div>
-                <h3 className="feature-title">Customização White-Label</h3>
+                <h3 className="feature-title">Identidade White-Label & PWA Studio</h3>
                 <p className="feature-text">
                   Defina as cores institucionais, logos, banners, dados de endereço e chaves de pagamento (Pagar.me e PIX) exclusivas da sua denominação.
+                </p>
+              </div>
+
+              {/* 12. Propostas Digitais & SaaS */}
+              <div className="feature-card">
+                <span className="badge-pill badge-admin">⚡ Expansão & SaaS</span>
+                <div className="feature-icon-wrapper" style={{ background: 'rgba(2, 132, 199, 0.1)', color: '#0284c7' }}>
+                  <FileText size={24} />
+                </div>
+                <h3 className="feature-title">Propostas Digitais & Provisionamento</h3>
+                <p className="feature-text">
+                  Gerador de propostas eletrônicas públicas com aceite digital e provisionamento automático instantâneo de instâncias na nuvem AWS.
                 </p>
               </div>
 
@@ -598,8 +637,18 @@ export function App() {
                   <td>Membro precisa alternar para outro app ou não tem</td>
                 </tr>
                 <tr>
+                  <td><strong>Ministério Kids & Totens</strong></td>
+                  <td className="comp-highlight">Totem expresso, PIN 4 dígitos, crachás e chamados via App/WhatsApp</td>
+                  <td>Fichas manuais de papel, risco na devolução e sem alertas</td>
+                </tr>
+                <tr>
+                  <td><strong>Relatórios & Auditoria Kids</strong></td>
+                  <td className="comp-highlight">Histórico de presenças, métricas ao vivo e exportação Excel/PDF</td>
+                  <td>Sem histórico nem auditoria de operadores e saídas</td>
+                </tr>
+                <tr>
                   <td><strong>Gestão Multi-Campus</strong></td>
-                  <td className="comp-highlight">Sede e Filiais integradas no mesmo painel</td>
+                  <td className="comp-highlight">Sede e Filiais integradas com segregação de líderes</td>
                   <td>Planilhas do Excel separadas que nunca batem</td>
                 </tr>
                 <tr>
