@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Zap, 
-  BookOpen, 
-  Smartphone, 
-  Ticket, 
-  LayoutDashboard, 
-  Store, 
-  Heart, 
-  CalendarDays, 
-  MessageSquare, 
-  Video, 
-  Sun, 
-  UserPlus, 
-  Tv, 
-  ShieldCheck, 
-  QrCode, 
-  Layers, 
-  Globe2, 
-  Flame, 
-  Share2, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Zap,
+  BookOpen,
+  Smartphone,
+  Ticket,
+  LayoutDashboard,
+  Store,
+  Heart,
+  CalendarDays,
+  MessageSquare,
+  Video,
+  Sun,
+  UserPlus,
+  Tv,
+  ShieldCheck,
+  QrCode,
+  Layers,
+  Globe2,
+  Flame,
+  Share2,
   CreditCard,
   MessageCircle,
   HelpCircle,
@@ -37,7 +37,7 @@ import mockupImg from './assets/app-mockup.png';
 export function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState<'pwa' | 'studio'>('pwa');
-  
+
   // Lead Form
   const [leadName, setLeadName] = useState('');
   const [leadPhone, setLeadPhone] = useState('');
@@ -65,28 +65,17 @@ export function App() {
 
   return (
     <div className="dot-pattern-bg min-h-screen">
-      
+
       {/* NAVBAR */}
       <nav className={`navbar container ${scrolled ? 'scrolled' : ''}`}>
-        <div className="nav-brand">
-          <div style={{
-            width: '36px',
-            height: '36px',
-            background: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)',
-            borderRadius: '10px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontWeight: 900,
-            fontSize: '1.1rem',
-            boxShadow: '0 4px 12px rgba(15, 118, 110, 0.3)'
-          }}>
-            FH
-          </div>
-          Faith-Hub
+        <div className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img
+            src="/brand/logo-transparent.png"
+            alt="Faith Hub"
+            style={{ height: '36px', objectFit: 'contain' }}
+          />
         </div>
-        
+
         <div className="nav-links">
           <a href="#inicio" className="nav-link">Início</a>
           <a href="#pilares" className="nav-link">Diferenciais</a>
@@ -96,19 +85,19 @@ export function App() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <a 
-            href="https://studio.faithhubs.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-outline btn-studio-pulse" 
+          <a
+            href="https://studio.faithhubs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-studio-pulse"
             style={{ padding: '0.5rem 1.1rem', fontSize: '0.85rem' }}
             title="Acessar o Portal Web de Gestão Pastoral"
           >
             Acessar Studio
           </a>
-          <button 
-            className="btn btn-primary" 
-            style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem' }} 
+          <button
+            className="btn btn-primary"
+            style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem' }}
             onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Falar com Especialista
@@ -124,25 +113,25 @@ export function App() {
               <Zap size={15} fill="currentColor" />
               <span>Tudo em um único lugar • Web & App Integrados</span>
             </div>
-            
+
             <h1 className="hero-title animate-fade-in-up">
               A plataforma unificada para <span>liderar, pastorear</span> e engajar sua comunidade.
             </h1>
-            
+
             <p className="hero-description animate-fade-in-up">
               Conecte os membros na palma da mão com Bíblia 100% offline, cultos ao vivo, células e cantina mobile, enquanto os pastores gerenciam congregações, voluntários e finanças em tempo real.
             </p>
-            
+
             <div className="hero-actions animate-fade-in-up">
-              <button 
-                className="btn btn-primary" 
+              <button
+                className="btn btn-primary"
                 onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Solicitar Demonstração VIP
                 <ArrowRight size={18} />
               </button>
-              <button 
-                className="btn btn-outline" 
+              <button
+                className="btn btn-outline"
                 onClick={() => document.getElementById('ecossistema')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explorar Todos os Módulos
@@ -170,10 +159,10 @@ export function App() {
               maxWidth: '360px',
               margin: '0 auto'
             }}>
-              <img 
-                src={mockupImg} 
-                alt="Faith Hub App Preview" 
-                style={{ width: '100%', height: 'auto', borderRadius: '24px', display: 'block' }} 
+              <img
+                src={mockupImg}
+                alt="Faith Hub App Preview"
+                style={{ width: '100%', height: 'auto', borderRadius: '24px', display: 'block' }}
               />
             </div>
 
@@ -233,7 +222,7 @@ export function App() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            
+
             {/* Pilar 1 */}
             <div className="feature-card" style={{ padding: '32px 24px' }}>
               <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
@@ -309,7 +298,7 @@ export function App() {
       {/* SEÇÃO INTERATIVA: TODAS AS FUNCIONALIDADES DETALHADAS */}
       <section className="section" id="ecossistema">
         <div className="container" style={{ textAlign: 'center' }}>
-          
+
           <h2 className="section-title">O Ecossistema Completo em Detalhes</h2>
           <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
             Alterne entre a experiência do membro no smartphone e a central de gestão pastoral.
@@ -364,7 +353,7 @@ export function App() {
               ======================================================= */}
           {activeTab === 'pwa' && (
             <div className="features-grid animate-fade-in-up">
-              
+
               {/* 1. Bíblia Sagrada */}
               <div className="feature-card">
                 <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
@@ -505,7 +494,7 @@ export function App() {
               ======================================================= */}
           {activeTab === 'studio' && (
             <div className="features-grid animate-fade-in-up">
-              
+
               {/* 1. Ministério Kids & Totens */}
               <div className="feature-card">
                 <span className="badge-pill badge-admin">⚡ Totem & Segurança Kids</span>
@@ -647,7 +636,7 @@ export function App() {
       {/* TABELA COMPARATIVA: TUDO EM UM SÓ LUGAR VS FERRAMENTAS ESPALHADAS */}
       <section className="section" id="comparativo" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
-          
+
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="section-title">Chega de Ferramentas Espalhadas</h2>
             <p className="section-subtitle">
@@ -740,7 +729,7 @@ export function App() {
       {/* FAQ SECTION */}
       <section className="section" id="faq">
         <div className="container">
-          
+
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="section-title">Perguntas Frequentes</h2>
             <p className="section-subtitle">
@@ -749,7 +738,7 @@ export function App() {
           </div>
 
           <div className="faq-grid">
-            
+
             <div className="faq-item">
               <div className="faq-q">
                 <HelpCircle size={18} color="#0f766e" />
@@ -798,7 +787,7 @@ export function App() {
       {/* FORMULÁRIO DE SOLICITAÇÃO DE DEMONSTRAÇÃO VIP */}
       <section className="section" id="demonstracao" style={{ background: 'linear-gradient(135deg, #0f766e 0%, #115e59 100%)', color: '#ffffff' }}>
         <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          
+
           <span style={{ background: 'rgba(255, 255, 255, 0.15)', padding: '6px 16px', borderRadius: '999px', fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Transformação Digital para o seu Ministério
           </span>
@@ -811,7 +800,7 @@ export function App() {
             Preencha seus dados abaixo e nosso especialista apresentará uma demonstração personalizada com a identidade da sua congregação.
           </p>
 
-          <form 
+          <form
             onSubmit={handleLeadSubmit}
             style={{
               background: '#ffffff',
@@ -977,23 +966,12 @@ export function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  background: 'var(--primary)',
-                  borderRadius: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontWeight: 900
-                }}>
-                  FH
-                </div>
-                <h4 style={{ margin: 0 }}>Faith-Hub</h4>
-              </div>
-              <p style={{ marginTop: '12px' }}>
+              <img
+                src="/brand/logo-white.png"
+                alt="Faith-Hub"
+                style={{ height: '38px', objectFit: 'contain', marginBottom: '12px' }}
+              />
+              <p style={{ marginTop: '8px' }}>
                 O ecossistema definitivo para a igreja local. Conectando pessoas e unificando a gestão pastoral em tempo real.
               </p>
             </div>
@@ -1021,7 +999,7 @@ export function App() {
               <p style={{ margin: 0, fontSize: '0.88rem' }}>contato@faithhub.com.br</p>
               <p style={{ margin: '6px 0 0 0', fontSize: '0.88rem' }}>WhatsApp: (48) 9 9107-9478</p>
               <div style={{ marginTop: '16px' }}>
-                <button 
+                <button
                   type="button"
                   onClick={() => openWhatsAppLead('Olá! Preciso de suporte ou informações comerciais do Faith-Hub.')}
                   className="btn btn-outline"
