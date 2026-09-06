@@ -53,13 +53,13 @@ export function App() {
   }, []);
 
   const openWhatsAppLead = (customText?: string) => {
-    const defaultMsg = customText || 'Olá! Gostaria de falar com um especialista do Faith-Hub e conhecer a plataforma para a minha igreja.';
+    const defaultMsg = customText || 'Olá! Gostaria de falar com um especialista do Faith Hub e conhecer a plataforma para a minha igreja.';
     window.open(`https://api.whatsapp.com/send?phone=5548991079478&text=${encodeURIComponent(defaultMsg)}`, '_blank');
   };
 
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Olá! Tenho interesse no Ecossistema Faith-Hub para a minha igreja.\n\n*Nome:* ${leadName}\n*Igreja:* ${leadChurch}\n*WhatsApp:* ${leadPhone}\n*Porte:* ${leadMembers} membros`;
+    const msg = `Olá! Tenho interesse no Ecossistema Faith Hub para a minha igreja.\n\n*Nome:* ${leadName}\n*Igreja:* ${leadChurch}\n*WhatsApp:* ${leadPhone}\n*Porte:* ${leadMembers} membros`;
     openWhatsAppLead(msg);
   };
 
@@ -79,7 +79,9 @@ export function App() {
         <div className="nav-links">
           <a href="#inicio" className="nav-link">Início</a>
           <a href="#pilares" className="nav-link">Diferenciais</a>
+          <a href="#planos" className="nav-link">Planos</a>
           <a href="#ecossistema" className="nav-link">Funcionalidades</a>
+          <a href="#seguranca" className="nav-link">Segurança</a>
           <a href="#comparativo" className="nav-link">Comparativo</a>
           <a href="#faq" className="nav-link">Dúvidas</a>
         </div>
@@ -115,11 +117,11 @@ export function App() {
             </div>
 
             <h1 className="hero-title animate-fade-in-up">
-              A plataforma unificada para <span>liderar, pastorear</span> e engajar sua comunidade.
+              <span>Lidere, pastoreie e engaje</span> — em um só lugar.
             </h1>
 
             <p className="hero-description animate-fade-in-up">
-              Conecte os membros na palma da mão com Bíblia 100% offline, cultos ao vivo, células e cantina mobile, enquanto os pastores gerenciam congregações, voluntários e finanças em tempo real.
+              Conecte os membros na palma da mão com Bíblia 100% offline, cultos ao vivo, células e cantina mobile, enquanto pastores e liderança gerenciam congregações, voluntários e finanças em tempo real — em um único painel.
             </p>
 
             <div className="hero-actions animate-fade-in-up">
@@ -141,8 +143,8 @@ export function App() {
             <div className="animate-fade-in-up" style={{ marginTop: '14px' }}>
               <button
                 type="button"
-                onClick={() => openWhatsAppLead('Olá! Gostaria de uma demonstração VIP do Faith-Hub para a minha igreja.')}
-                style={{ background: 'none', border: 'none', color: '#0f766e', fontWeight: 800, fontSize: '0.86rem', display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}
+                onClick={() => openWhatsAppLead('Olá! Gostaria de uma demonstração VIP do Faith Hub para a minha igreja.')}
+                style={{ background: 'none', border: 'none', color: '#0F766E', fontWeight: 800, fontSize: '0.86rem', display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}
               >
                 <MessageCircle size={17} color="#25d366" /> Ou fale agora com um consultor no WhatsApp ➔
               </button>
@@ -166,13 +168,13 @@ export function App() {
               />
             </div>
 
-            {/* Floating Badge 1 */}
+            {/* Floating Badge 1 (Ícone Vetorial de Traço Único) */}
             <div style={{
               position: 'absolute',
               top: '15%',
               left: '-20px',
               background: '#ffffff',
-              padding: '12px 18px',
+              padding: '10px 16px',
               borderRadius: '20px',
               border: '1px solid var(--border-color)',
               boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
@@ -180,20 +182,22 @@ export function App() {
               alignItems: 'center',
               gap: '10px'
             }}>
-              <span style={{ fontSize: '1.4rem' }}>📖</span>
+              <div style={{ background: 'rgba(15, 118, 110, 0.12)', color: '#0F766E', padding: '8px', borderRadius: '12px', display: 'flex' }}>
+                <BookOpen size={18} />
+              </div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: '0.84rem', color: '#0f172a' }}>Bíblia 100% Offline</div>
                 <div style={{ fontSize: '0.72rem', color: '#059669', fontWeight: 700 }}>66 Livros na Íntegra</div>
               </div>
             </div>
 
-            {/* Floating Badge 2 */}
+            {/* Floating Badge 2 (Ícone Vetorial de Traço Único) */}
             <div style={{
               position: 'absolute',
               bottom: '10%',
               right: '-15px',
               background: '#ffffff',
-              padding: '12px 18px',
+              padding: '10px 16px',
               borderRadius: '20px',
               border: '1px solid var(--border-color)',
               boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
@@ -201,7 +205,9 @@ export function App() {
               alignItems: 'center',
               gap: '10px'
             }}>
-              <span style={{ fontSize: '1.4rem' }}>🌐</span>
+              <div style={{ background: 'rgba(15, 118, 110, 0.12)', color: '#0F766E', padding: '8px', borderRadius: '12px', display: 'flex' }}>
+                <Globe2 size={18} />
+              </div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: '0.84rem', color: '#0f172a' }}>Multi-Congregações</div>
                 <div style={{ fontSize: '0.72rem', color: '#0f766e', fontWeight: 700 }}>Sede & Filiais Conectadas</div>
@@ -215,7 +221,7 @@ export function App() {
       <section className="section" id="pilares" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <h2 className="section-title">Por que as igrejas escolhem o Faith-Hub?</h2>
+            <h2 className="section-title">Por que as igrejas escolhem o Faith Hub?</h2>
             <p className="section-subtitle">
               Criamos uma arquitetura moderna que resolve tanto a experiência do membro quanto a complexidade da liderança.
             </p>
@@ -265,10 +271,10 @@ export function App() {
                 Atendimento Consultivo para Pastores & Liderança
               </span>
               <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#ffffff', margin: '8px 0', letterSpacing: '-0.02em' }}>
-                Quer ver como o Faith-Hub funciona na realidade da sua igreja?
+                Quer ver como o Faith Hub funciona na realidade da sua igreja?
               </h3>
               <p style={{ color: '#94a3b8', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Converse diretamente com nossos consultores, tire dúvidas sobre migração de dados e receba uma demonstração VIP personalizada.
+                Converse diretamente com nossos consultores, tire dúvidas sobre migração de dados e receba uma demonstração personalizada.
               </p>
             </div>
 
@@ -276,7 +282,7 @@ export function App() {
               <button
                 type="button"
                 className="btn btn-whatsapp-cta"
-                onClick={() => openWhatsAppLead('Olá! Gostaria de agendar uma demonstração personalizada com um especialista do Faith-Hub.')}
+                onClick={() => openWhatsAppLead('Olá! Gostaria de agendar uma demonstração personalizada com um especialista do Faith Hub.')}
                 style={{ padding: '13px 24px', fontSize: '0.90rem', fontWeight: 800 }}
               >
                 <MessageCircle size={18} />
@@ -295,13 +301,138 @@ export function App() {
         </div>
       </section>
 
+      {/* SEÇÃO NOVA: PLANOS POR PORTE DE IGREJA */}
+      <section className="section" id="planos">
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.08em', color: '#0F766E', textTransform: 'uppercase', background: 'rgba(15, 118, 110, 0.1)', padding: '6px 16px', borderRadius: 999 }}>
+            Escalabilidade Real
+          </span>
+          <h2 className="section-title" style={{ marginTop: '14px' }}>
+            Do primeiro clique à sua rede de campi
+          </h2>
+          <p className="section-subtitle">
+            Sua igreja de 80 membros não precisa das mesmas telas que uma rede de 12 campi — e não deveria pagar por elas. O Faith Hub cresce junto com a sua estrutura.
+          </p>
+
+          <div className="plans-grid">
+            {/* Card 1: Entrada */}
+            <div className="plan-card">
+              <span className="plan-card-tag">Plano Entrada</span>
+              <h3 className="plan-title">Entrada</h3>
+              <p className="plan-headline">"Para igrejas começando a sair do papel e do grupo de WhatsApp"</p>
+              <p className="plan-desc">
+                Membros, células, devocional diário e mural de oração, com dízimo via PIX oficial. O básico bem feito, sem excesso de tela e com máxima simplicidade.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> App do Membro (PWA) instantâneo
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Bíblia Sagrada 100% Offline
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Células & Mural de Oração
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Dízimos com PIX oficial
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn-outline"
+                style={{ width: '100%' }}
+                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Ver se este plano se encaixa
+              </button>
+            </div>
+
+            {/* Card 2: Crescimento */}
+            <div className="plan-card highlight">
+              <span className="plan-card-tag featured">Mais Procurado</span>
+              <h3 className="plan-title">Crescimento</h3>
+              <p className="plan-headline">"Para igrejas com culto infantil estruturado e agenda de eventos"</p>
+              <p className="plan-desc">
+                Tudo do plano Entrada + Ministério Kids completo com totem de check-in, crachás digitais, ingressos de eventos com QR Code e cantina mobile com Kanban de pedidos.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Tudo do Plano Entrada
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Totem de Check-in Kids & Alertas
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Ticketing & Portaria QR Code
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Cantina com PDV & Pedidos
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ width: '100%' }}
+                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Ver se este plano se encaixa
+              </button>
+            </div>
+
+            {/* Card 3: Rede / Multi-campus */}
+            <div className="plan-card">
+              <span className="plan-card-tag">Multi-Campi</span>
+              <h3 className="plan-title">Rede / Multi-campus</h3>
+              <p className="plan-headline">"Para redes, convenções e igrejas com múltiplas unidades"</p>
+              <p className="plan-desc">
+                Tudo do plano Crescimento + governança multi-campi integrada, painel de salas do Kids ao vivo, chamado de emergência automatizado e trilha de auditoria para o conselho.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Tudo do Plano Crescimento
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Gestão Multi-Campus & Filiais
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Trilha de Auditoria Forense
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <CheckCircle2 size={16} color="#0F766E" /> Salas Kids ao Vivo & Alertas
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn-outline"
+                style={{ width: '100%' }}
+                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Ver se este plano se encaixa
+              </button>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '2.5rem' }}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+              style={{ padding: '14px 28px' }}
+            >
+              Ver qual plano se encaixa na sua igreja
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* SEÇÃO INTERATIVA: TODAS AS FUNCIONALIDADES DETALHADAS */}
       <section className="section" id="ecossistema">
         <div className="container" style={{ textAlign: 'center' }}>
 
           <h2 className="section-title">O Ecossistema Completo em Detalhes</h2>
           <p className="section-subtitle" style={{ marginBottom: '2.5rem' }}>
-            Alterne entre a experiência do membro no smartphone e a central de gestão pastoral.
+            Alterne entre o que o membro sente no bolso — Bíblia, célula, oração — e o que a liderança enxerga no Faith Hub Studio. São duas experiências, um só sistema.
           </p>
 
           {/* Abas Interativas */}
@@ -321,7 +452,7 @@ export function App() {
               onClick={() => setActiveTab('studio')}
             >
               <LayoutDashboard size={18} />
-              Faith-Hub Studio (Portal Web Gestão)
+              Faith Hub Studio (Portal Web Gestão)
             </button>
           </div>
 
@@ -329,20 +460,20 @@ export function App() {
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: 10,
-            padding: '10px 22px',
-            background: 'rgba(15, 118, 110, 0.07)',
+            gap: 12,
+            padding: '12px 24px',
+            background: 'rgba(15, 118, 110, 0.08)',
             borderRadius: 999,
-            border: '1px solid rgba(15, 118, 110, 0.18)',
+            border: '1px solid rgba(15, 118, 110, 0.2)',
             marginBottom: '2.5rem',
             fontSize: '0.86rem',
-            color: '#0f766e',
+            color: '#0F766E',
             fontWeight: 700,
             maxWidth: '780px',
             lineHeight: 1.45,
             textAlign: 'left'
           }}>
-            <span style={{ fontSize: '1.2rem' }}>💡</span>
+            <ShieldCheck size={20} color="#0F766E" style={{ flexShrink: 0 }} />
             <span>
               <strong>Acesso Inteligente & Seguro:</strong> Apenas a <strong>Bíblia Sagrada</strong>, a <strong>Recepção de Visitantes</strong> e o <strong>Módulo Kids</strong> estão disponíveis livremente sem login. Todas as demais funções são exclusivas e protegidas na <strong>Área do Membro</strong>.
             </span>
@@ -356,7 +487,7 @@ export function App() {
 
               {/* 1. Bíblia Sagrada */}
               <div className="feature-card">
-                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <span className="badge-pill badge-free">Acesso livre · sem login</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <BookOpen size={24} />
                 </div>
@@ -368,7 +499,7 @@ export function App() {
 
               {/* 2. Recepção de Visitantes */}
               <div className="feature-card">
-                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <span className="badge-pill badge-free">Acesso livre · sem login</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
                   <Flame size={24} />
                 </div>
@@ -380,7 +511,7 @@ export function App() {
 
               {/* 3. Módulo Kids & Check-in Expresso */}
               <div className="feature-card">
-                <span className="badge-pill badge-free">🟢 Acesso Livre (Sem Login)</span>
+                <span className="badge-pill badge-free">Acesso livre · sem login</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>
                   <Baby size={24} />
                 </div>
@@ -392,7 +523,7 @@ export function App() {
 
               {/* 4. Cultos ao Vivo */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
                   <Video size={24} />
                 </div>
@@ -404,7 +535,7 @@ export function App() {
 
               {/* 5. Palavra Diária & Devocionais */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
                   <Sun size={24} />
                 </div>
@@ -416,7 +547,7 @@ export function App() {
 
               {/* 6. Células & Redes */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
                   <Layers size={24} />
                 </div>
@@ -428,7 +559,7 @@ export function App() {
 
               {/* 7. Cantina & PDV Mobile */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
                   <Store size={24} />
                 </div>
@@ -440,7 +571,7 @@ export function App() {
 
               {/* 8. Eventos & Ingressos QR Code */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
                   <Ticket size={24} />
                 </div>
@@ -452,7 +583,7 @@ export function App() {
 
               {/* 9. Dízimos & Ofertas */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
                   <Heart size={24} />
                 </div>
@@ -464,7 +595,7 @@ export function App() {
 
               {/* 10. Mural de Oração */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
                   <MessageSquare size={24} />
                 </div>
@@ -476,7 +607,7 @@ export function App() {
 
               {/* 11. Perfil & Carteirinha */}
               <div className="feature-card">
-                <span className="badge-pill badge-member">🔒 Área do Membro</span>
+                <span className="badge-pill badge-member">Área do membro</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Smartphone size={24} />
                 </div>
@@ -490,14 +621,14 @@ export function App() {
           )}
 
           {/* =======================================================
-              ABA 2: FAITH-HUB STUDIO (PORTAL WEB)
+              ABA 2: FAITH HUB STUDIO (PORTAL WEB)
               ======================================================= */}
           {activeTab === 'studio' && (
             <div className="features-grid animate-fade-in-up">
 
               {/* 1. Ministério Kids & Totens */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Totem & Segurança Kids</span>
+                <span className="badge-pill badge-admin">Totem & Segurança Kids</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>
                   <Baby size={24} />
                 </div>
@@ -509,7 +640,7 @@ export function App() {
 
               {/* 2. Relatórios & Auditoria */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Auditoria & Inteligência</span>
+                <span className="badge-pill badge-admin">Auditoria & Inteligência</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
                   <BarChart3 size={24} />
                 </div>
@@ -521,7 +652,7 @@ export function App() {
 
               {/* 3. Multi-Congregações */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Multi-Campus Blindado</span>
+                <span className="badge-pill badge-admin">Multi-Campus Blindado</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Building2 size={24} />
                 </div>
@@ -533,7 +664,7 @@ export function App() {
 
               {/* 4. Membros & Famílias */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Pastoreio & Famílias</span>
+                <span className="badge-pill badge-admin">Pastoreio & Famílias</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb' }}>
                   <Users size={24} />
                 </div>
@@ -545,7 +676,7 @@ export function App() {
 
               {/* 5. Cell Workspace Studio */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Pequenos Grupos</span>
+                <span className="badge-pill badge-admin">Pequenos Grupos</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(147, 51, 234, 0.1)', color: '#9333ea' }}>
                   <Layers size={24} />
                 </div>
@@ -557,7 +688,7 @@ export function App() {
 
               {/* 6. Kanban de Pedidos PDV */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Cantina & Livraria</span>
+                <span className="badge-pill badge-admin">Cantina & Livraria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(5, 150, 105, 0.1)', color: '#059669' }}>
                   <Store size={24} />
                 </div>
@@ -569,7 +700,7 @@ export function App() {
 
               {/* 7. Scanner de Ingressos */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Ticketing & Portaria</span>
+                <span className="badge-pill badge-admin">Ticketing & Portaria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}>
                   <QrCode size={24} />
                 </div>
@@ -581,7 +712,7 @@ export function App() {
 
               {/* 8. Central de Transmissões */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Mídia & Transmissões</span>
+                <span className="badge-pill badge-admin">Mídia & Transmissões</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
                   <Tv size={24} />
                 </div>
@@ -593,7 +724,7 @@ export function App() {
 
               {/* 9. Devocionais & Estudos */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Nutrição Espiritual</span>
+                <span className="badge-pill badge-admin">Nutrição Espiritual</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(234, 179, 8, 0.1)', color: '#eab308' }}>
                   <Sun size={24} />
                 </div>
@@ -605,7 +736,7 @@ export function App() {
 
               {/* 10. Moderação Pastoral */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Acolhimento Pastoral</span>
+                <span className="badge-pill badge-admin">Acolhimento Pastoral</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}>
                   <MessageCircle size={24} />
                 </div>
@@ -617,7 +748,7 @@ export function App() {
 
               {/* 11. Branding White-Label */}
               <div className="feature-card">
-                <span className="badge-pill badge-admin">⚡ Identidade Própria</span>
+                <span className="badge-pill badge-admin">Identidade Própria</span>
                 <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0f766e' }}>
                   <Globe2 size={24} />
                 </div>
@@ -633,6 +764,68 @@ export function App() {
         </div>
       </section>
 
+      {/* SEÇÃO NOVA: SEGURANÇA, DADOS E CONFORMIDADE */}
+      <section className="section" id="seguranca" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.08em', color: '#0F766E', textTransform: 'uppercase', background: 'rgba(15, 118, 110, 0.1)', padding: '6px 16px', borderRadius: 999 }}>
+            Governança & Confiança
+          </span>
+          <h2 className="section-title" style={{ marginTop: '14px' }}>
+            Segurança que dá tranquilidade pro conselho — e pros pais
+          </h2>
+          <p className="section-subtitle">
+            Dado de igreja não é só número — é dízimo, é dado de criança, é confiança de décadas. O Faith Hub trata isso como cuidado, não como burocracia.
+          </p>
+
+          <div className="security-grid">
+            {/* Bloco 1 */}
+            <div className="security-card">
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(15, 118, 110, 0.1)', color: '#0F766E' }}>
+                <ShieldCheck size={26} />
+              </div>
+              <h3 className="feature-title">Trilha de auditoria forense</h3>
+              <p className="feature-text">
+                Toda alteração financeira ou de cadastro fica registrada: quem mudou, quando, de onde e qual era o valor antes. Item de governança indispensável para o conselho administrativo e para redes denominacionais.
+              </p>
+            </div>
+
+            {/* Bloco 2 */}
+            <div className="security-card">
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>
+                <QrCode size={26} />
+              </div>
+              <h3 className="feature-title">PIX rastreável por congregação</h3>
+              <p className="feature-text">
+                Cada filial gera sua própria chave PIX dinâmica diretamente pelo sistema. Fatura e status de pagamento ficam sempre visíveis em "Minha Assinatura" e nos relatórios de tesouraria — sem taxas ocultas ou letra miúda.
+              </p>
+            </div>
+
+            {/* Bloco 3 */}
+            <div className="security-card">
+              <div className="feature-icon-wrapper" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>
+                <Baby size={26} />
+              </div>
+              <h3 className="feature-title">Check-in Kids com alerta e histórico</h3>
+              <p className="feature-text">
+                PIN de segurança de 4 dígitos, crachá digital e chamado de emergência automatizado aos pais via App e WhatsApp, com histórico de presença e devolução 100% exportável para auditoria do ministério infantil.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '2.5rem' }}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => openWhatsAppLead('Olá! Gostaria de falar sobre segurança, LGPD e conformidade do Faith Hub com um especialista.')}
+              style={{ padding: '14px 28px' }}
+            >
+              <MessageCircle size={18} />
+              Falar sobre segurança e conformidade com um especialista
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* TABELA COMPARATIVA: TUDO EM UM SÓ LUGAR VS FERRAMENTAS ESPALHADAS */}
       <section className="section" id="comparativo" style={{ background: '#ffffff', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
@@ -640,7 +833,7 @@ export function App() {
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="section-title">Chega de Ferramentas Espalhadas</h2>
             <p className="section-subtitle">
-              Veja a diferença entre ter o ecossistema Faith-Hub unificado vs tentar conectar 6 ferramentas separadas.
+              Veja a diferença entre ter o ecossistema Faith Hub unificado vs tentar conectar 6 ferramentas separadas.
             </p>
           </div>
 
@@ -649,7 +842,7 @@ export function App() {
               <thead>
                 <tr>
                   <th>Recurso / Experiência</th>
-                  <th className="comp-highlight">⚡ Faith-Hub Ecossistema</th>
+                  <th className="comp-highlight">⚡ Faith Hub Ecossistema</th>
                   <th>❌ Ferramentas Fragmentadas</th>
                 </tr>
               </thead>
@@ -701,21 +894,21 @@ export function App() {
           {/* Mid-Page Conversion Banner 2 */}
           <div className="conversion-banner" style={{ marginTop: '40px', background: 'linear-gradient(135deg, #0f172a 0%, #042f2e 100%)' }}>
             <div style={{ maxWidth: '600px', textAlign: 'left' }}>
-              <span style={{ fontSize: '0.74rem', fontWeight: 800, letterSpacing: '0.08em', color: '#38bdf8', textTransform: 'uppercase' }}>
-                🚀 Migração Simples & Suporte Total
+              <span style={{ fontSize: '0.74rem', fontWeight: 800, letterSpacing: '0.08em', color: '#5eead4', textTransform: 'uppercase' }}>
+                MIGRAÇÃO ASSISTIDA & SUPORTE TOTAL
               </span>
               <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#ffffff', margin: '8px 0' }}>
-                Elimine planilhas soltas e múltiplos custos ainda esta semana.
+                Sem planilha solta, sem retrabalho de configuração.
               </h3>
               <p style={{ color: '#94a3b8', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Nossa equipe cuida de toda a configuração inicial e treinamento da sua liderança e voluntários para sua igreja começar em até 24h.
+                Nossa equipe cuida da configuração inicial e do treinamento da sua liderança e voluntários — com onboarding assistido limitado a algumas igrejas novas por mês, para garantir atenção de verdade em cada implantação.
               </p>
             </div>
 
             <button
               type="button"
               className="btn btn-whatsapp-cta"
-              onClick={() => openWhatsAppLead('Olá! Quero entender como funciona a migração para o Faith-Hub na minha igreja.')}
+              onClick={() => openWhatsAppLead('Olá! Quero entender como funciona a migração para o Faith Hub na minha igreja.')}
               style={{ padding: '14px 26px', fontSize: '0.95rem', fontWeight: 800 }}
             >
               <MessageCircle size={18} />
@@ -733,7 +926,7 @@ export function App() {
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="section-title">Perguntas Frequentes</h2>
             <p className="section-subtitle">
-              Tire suas dúvidas sobre como o Faith-Hub transforma o dia a dia da sua comunidade.
+              Tire suas dúvidas sobre como o Faith Hub transforma o dia a dia da sua comunidade.
             </p>
           </div>
 
@@ -755,7 +948,7 @@ export function App() {
                 Minha igreja tem várias filiais. Como funciona?
               </div>
               <div className="faq-a">
-                O Faith-Hub foi desenhado desde o início para operações multi-campi. Cada filial tem seus dados, pastores e cantinas isoladas, enquanto a liderança geral da Sede acompanha tudo de forma consolidada.
+                O Faith Hub foi desenhado desde o início para operações multi-campi. Cada filial tem seus dados, pastores e cantinas isoladas, enquanto a liderança geral da Sede acompanha tudo de forma consolidada.
               </div>
             </div>
 
@@ -779,6 +972,26 @@ export function App() {
               </div>
             </div>
 
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                Como funciona a segurança dos dados financeiros e de crianças?
+              </div>
+              <div className="faq-a">
+                Cada congregação opera com dados estritamente segregados (multi-tenant nativo). As transações PIX geram comprovantes diretos com conciliação bancária rastreável. No ministério infantil, o check-in exige PIN de segurança de 4 dígitos, crachás digitais e alertas instantâneos, com auditoria completa de operadores e horários de entrada e saída.
+              </div>
+            </div>
+
+            <div className="faq-item">
+              <div className="faq-q">
+                <HelpCircle size={18} color="#0f766e" />
+                Minha igreja é pequena. Faz sentido pra mim?
+              </div>
+              <div className="faq-a">
+                Com certeza. O plano de Entrada foi desenhado exatamente para congregações em fase de estruturação: você começa com o PWA completo para membros, devocionais e dízimos por PIX sem complicação técnica e escala conforme a comunidade crescer.
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -793,7 +1006,7 @@ export function App() {
           </span>
 
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, color: '#ffffff', marginTop: '16px', letterSpacing: '-0.03em' }}>
-            Pronto para ver o Faith-Hub na prática?
+            Pronto para ver o Faith Hub na prática?
           </h2>
 
           <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.08rem', margin: '12px 0 32px 0' }}>
@@ -936,7 +1149,7 @@ export function App() {
             <div style={{ marginTop: '10px' }}>
               <button
                 type="button"
-                onClick={() => openWhatsAppLead('Olá! Gostaria de falar com um especialista comercial do Faith-Hub agora.')}
+                onClick={() => openWhatsAppLead('Olá! Gostaria de falar com um especialista comercial do Faith Hub agora.')}
                 style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   border: '1.5px solid rgba(255, 255, 255, 0.35)',
@@ -968,7 +1181,7 @@ export function App() {
             <div className="footer-brand">
               <img
                 src="/brand/logo-white.png"
-                alt="Faith-Hub"
+                alt="Faith Hub"
                 style={{ height: '38px', objectFit: 'contain', marginBottom: '12px' }}
               />
               <p style={{ marginTop: '8px' }}>
@@ -979,7 +1192,7 @@ export function App() {
             <div>
               <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Ecossistema</h5>
               <a href="#ecossistema">App do Membro (PWA)</a>
-              <a href="#ecossistema">Faith-Hub Studio Web</a>
+              <a href="#ecossistema">Faith Hub Studio Web</a>
               <a href="#ecossistema">Bíblia Sagrada Offline</a>
               <a href="#ecossistema">Cell Workspace</a>
               <a href="#ecossistema">Cantina & PDV Mobile</a>
@@ -989,6 +1202,8 @@ export function App() {
               <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Institucional</h5>
               <a href="#inicio">Início</a>
               <a href="#pilares">Diferenciais</a>
+              <a href="#planos">Planos</a>
+              <a href="#seguranca">Segurança</a>
               <a href="#comparativo">Comparativo</a>
               <a href="#faq">Perguntas Frequentes</a>
               <a href="https://studio.faithhubs.com" target="_blank" rel="noopener noreferrer">Acesso Studio</a>
@@ -1001,7 +1216,7 @@ export function App() {
               <div style={{ marginTop: '16px' }}>
                 <button
                   type="button"
-                  onClick={() => openWhatsAppLead('Olá! Preciso de suporte ou informações comerciais do Faith-Hub.')}
+                  onClick={() => openWhatsAppLead('Olá! Preciso de suporte ou informações comerciais do Faith Hub.')}
                   className="btn btn-outline"
                   style={{ color: '#ffffff', borderColor: '#334155', padding: '8px 16px', fontSize: '0.80rem', cursor: 'pointer' }}
                 >
@@ -1012,7 +1227,7 @@ export function App() {
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; 2026 Faith-Hub Ecossistema. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Faith Hub. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
@@ -1020,7 +1235,7 @@ export function App() {
       {/* FLOATING WHATSAPP BUTTON (ALWAYS ACCESSIBLE) */}
       <button
         type="button"
-        onClick={() => openWhatsAppLead('Olá! Estou no site do Faith-Hub e gostaria de falar com um especialista.')}
+        onClick={() => openWhatsAppLead('Olá! Estou no site do Faith Hub e gostaria de falar com um especialista.')}
         className="floating-whatsapp-btn"
         title="Fale ao vivo com nosso especialista no WhatsApp"
         aria-label="Falar com Especialista no WhatsApp"
