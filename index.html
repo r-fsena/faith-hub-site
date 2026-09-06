@@ -2,10 +2,111 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Título Primário & SEO -->
+    <title>Faith Hub — Sistema de Gestão para Igrejas e App de Membros</title>
+    <meta name="description" content="Sistema de gestão para igrejas com app de membros, Bíblia 100% offline, check-in Kids, dízimo via PIX e gestão multi-campus. Peça uma demonstração." />
+    <link rel="canonical" href="https://faithhubs.com/" />
+    
+    <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="/brand/logo-symbol.png" />
     <link rel="apple-touch-icon" href="/brand/logo-symbol.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faith Hub • Plataforma Unificada para Liderar, Pastorear e Engajar sua Comunidade</title>
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Faith Hub" />
+    <meta property="og:title" content="Faith Hub — Sistema de Gestão para Igrejas e App de Membros" />
+    <meta property="og:description" content="Sistema de gestão para igrejas com app de membros, Bíblia 100% offline, check-in Kids, dízimo via PIX e gestão multi-campus." />
+    <meta property="og:url" content="https://faithhubs.com" />
+    <meta property="og:image" content="https://faithhubs.com/brand/og-cover.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Faith Hub — Sistema de Gestão para Igrejas e App de Membros" />
+    <meta name="twitter:description" content="Sistema de gestão para igrejas com app de membros, Bíblia 100% offline, check-in Kids, dízimo via PIX e gestão multi-campus." />
+    <meta name="twitter:image" content="https://faithhubs.com/brand/og-cover.png" />
+
+    <!-- Dados Estruturados (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Faith Hub",
+      "url": "https://faithhubs.com",
+      "logo": "https://faithhubs.com/brand/logo-transparent.png",
+      "email": "contato@faithhub.com.br"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Faith Hub",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS, Android (PWA)",
+      "description": "Sistema de gestão para igrejas com app de membros, Bíblia offline, check-in Kids, dízimo via PIX e gestão multi-campus."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como os membros instalam o aplicativo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O app é uma Progressive Web App (PWA) de última geração. O membro acessa o link da igreja pelo celular e clica em \"Adicionar à Tela de Início\". Funciona tanto em iPhones (iOS) quanto Androids sem precisar de downloads pesados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Minha igreja tem várias filiais. Como funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Faith Hub foi desenhado desde o início para operações multi-campi. Cada filial tem seus dados, pastores e cantinas isoladas, enquanto a liderança geral da Sede acompanha tudo de forma consolidada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Bíblia Sagrada funciona sem internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim! Todos os 66 livros bíblicos e 1.189 capítulos (traduções NVI, ACF e AA) ficam salvos no cache do dispositivo, permitindo leitura rápida e marcação de versículos em qualquer lugar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como a liderança gerencia os grupos e células?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pelo Cell Workspace Studio, os líderes e pastores aprovam novos membros que solicitaram ingresso pelo app, gerenciam contatos e organizam a escala de voluntários para a comunhão semanal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a segurança dos dados financeiros e de crianças?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada congregação opera com dados estritamente segregados (multi-tenant nativo). As transações PIX geram comprovantes diretos com conciliação bancária rastreável. No ministério infantil, o check-in exige PIN de segurança de 4 dígitos, crachás digitais e alertas instantâneos, com auditoria completa de operadores e horários de entrada e saída."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Minha igreja é pequena. Faz sentido pra mim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Com certeza. O plano de Entrada foi desenhado exatamente para congregações em fase de estruturação: você começa com o PWA completo para membros, devocionais e dízimos por PIX sem complicação técnica e escala conforme a comunidade crescer."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

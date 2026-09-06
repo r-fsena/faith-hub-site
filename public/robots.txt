@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faithhubs.com/sitemap.xml
