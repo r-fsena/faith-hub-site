@@ -23,23 +23,23 @@ export const Footer: React.FC<FooterProps> = ({ openWhatsAppLead }) => {
           </div>
 
           <div>
-            <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Soluções & Módulos</h5>
+            <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Soluções para Membros</h5>
+            <a href="/biblia-offline">Bíblia Sagrada 100% Offline</a>
             <a href="/kids">Check-in Kids & Totem</a>
             <a href="/dizimos-pix">Dízimos & Ofertas PIX</a>
-            <a href="/biblia-offline">Bíblia Sagrada 100% Offline</a>
-            <a href="/multi-campus">Governança Multi-Campi</a>
-            <a href="/celulas">Células & Escalas de Apoio</a>
+            <a href="/celulas">Células, Grupos & Escalas</a>
+            <a href="/eventos-ingressos">Eventos & Ingressos QR Code</a>
+            <a href="/cantina-livraria">Cantina & PDV Mobile</a>
           </div>
 
           <div>
-            <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Institucional</h5>
-            <a href="/#inicio">Início</a>
-            <a href="/#pilares">Diferenciais</a>
-            <a href="/#planos">Planos por Porte</a>
-            <a href="/#seguranca">Segurança & LGPD</a>
-            <a href="/#comparativo">Comparativo</a>
-            <a href="/#faq">Perguntas Frequentes</a>
-            <a href="https://studio.faithhubs.com" target="_blank" rel="noopener noreferrer">Acesso Studio</a>
+            <h5 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '0.96rem' }}>Comunhão & Gestão</h5>
+            <a href="/multi-campus">Governança Multi-Campi</a>
+            <a href="/visitantes">Recepção de Visitantes</a>
+            <a href="/mural-oracao">Mural de Oração Comunitário</a>
+            <a href="/carteirinha-digital">Carteirinha Digital de Membro</a>
+            <a href="/cultos-ao-vivo">Cultos ao Vivo & Transmissões</a>
+            <a href="/devocionais">Devocionais Diários</a>
           </div>
 
           <div>
@@ -55,6 +55,16 @@ export const Footer: React.FC<FooterProps> = ({ openWhatsAppLead }) => {
               >
                 💬 (48) 9 9107-9478
               </button>
+            </div>
+            <div style={{ marginTop: '14px' }}>
+              <a
+                href="https://studio.faithhubs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#5EC2B8', fontSize: '0.82rem', textDecoration: 'none' }}
+              >
+                ➔ Acessar Faith Hub Studio Web
+              </a>
             </div>
           </div>
         </div>

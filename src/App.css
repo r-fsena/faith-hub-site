@@ -678,6 +678,158 @@
 }
 
 /* ==========================================================================
+   MEGA MENU DROPDOWN (FUNCIONALIDADES NO HEADER)
+   ========================================================================== */
+
+.nav-dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.mega-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 680px;
+  max-width: 94vw;
+  background: rgba(6, 18, 18, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(94, 194, 184, 0.28);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  z-index: 1000;
+  cursor: default;
+}
+
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.mega-menu-col-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5EC2B8;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mega-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  margin-bottom: 2px;
+}
+
+.mega-menu-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(3px);
+}
+
+.mega-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-item-text strong {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mega-item-text span {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.mega-menu-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.mega-menu-footer a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5EC2B8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.mega-menu-footer a:hover {
+  color: #2dd4bf;
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .mega-menu-dropdown {
+    width: 340px;
+    left: 0;
+    transform: none;
+  }
+  .mega-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* ==========================================================================
    PÁGINAS DE MÓDULO (SEO DEDICADO: /kids, /dizimos-pix, etc.)
    ========================================================================== */
 

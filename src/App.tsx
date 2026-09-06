@@ -9,6 +9,13 @@ import { DizimosPixPage } from './pages/DizimosPixPage';
 import { BibliaOfflinePage } from './pages/BibliaOfflinePage';
 import { MultiCampusPage } from './pages/MultiCampusPage';
 import { CelulasPage } from './pages/CelulasPage';
+import { EventosIngressosPage } from './pages/EventosIngressosPage';
+import { CantinaLivrariaPage } from './pages/CantinaLivrariaPage';
+import { VisitantesPage } from './pages/VisitantesPage';
+import { MuralOracaoPage } from './pages/MuralOracaoPage';
+import { CarteirinhaDigitalPage } from './pages/CarteirinhaDigitalPage';
+import { CultosAoVivoPage } from './pages/CultosAoVivoPage';
+import { DevocionaisPage } from './pages/DevocionaisPage';
 
 interface AppProps {
   initialPath?: string;
@@ -50,6 +57,20 @@ export function App({ initialPath }: AppProps = {}) {
         return <MultiCampusPage openWhatsAppLead={openWhatsAppLead} />;
       case '/celulas':
         return <CelulasPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/eventos-ingressos':
+        return <EventosIngressosPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/cantina-livraria':
+        return <CantinaLivrariaPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/visitantes':
+        return <VisitantesPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/mural-oracao':
+        return <MuralOracaoPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/carteirinha-digital':
+        return <CarteirinhaDigitalPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/cultos-ao-vivo':
+        return <CultosAoVivoPage openWhatsAppLead={openWhatsAppLead} />;
+      case '/devocionais':
+        return <DevocionaisPage openWhatsAppLead={openWhatsAppLead} />;
       default:
         return <HomePage openWhatsAppLead={openWhatsAppLead} />;
     }

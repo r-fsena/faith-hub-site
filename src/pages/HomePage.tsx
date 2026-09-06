@@ -457,6 +457,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Formulário acolhedor onde visitantes informam sua congregação de preferência, motivo da visita e pedido de oração para acolhimento imediato da liderança.
                 </p>
+                <a href="/visitantes" className="feature-link">Recepção de visitantes sem login →</a>
               </div>
 
               {/* 3. Módulo Kids & Check-in Expresso */}
@@ -482,6 +483,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Acesso exclusivo com 1 toque às transmissões do canal da igreja no YouTube com banner pulsante "AO VIVO" durante as celebrações oficiais.
                 </p>
+                <a href="/cultos-ao-vivo" className="feature-link">Cultos ao vivo sem distrações →</a>
               </div>
 
               {/* 5. Palavra Diária & Devocionais */}
@@ -494,6 +496,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Meditações diárias publicadas pelos pastores com versículo do dia, reflexão bíblica e oração guiada para nutrir a vida espiritual da comunidade.
                 </p>
+                <a href="/devocionais" className="feature-link">Ver devocionais e estudos diários →</a>
               </div>
 
               {/* 6. Células & Redes */}
@@ -519,6 +522,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Cardápio da cantina e livros com carrinho de compras, opção de retirada no balcão ou entrega e pagamento seguro via PIX ou Cartão de Crédito.
                 </p>
+                <a href="/cantina-livraria" className="feature-link">Ver cardápio mobile e pedidos →</a>
               </div>
 
               {/* 8. Eventos & Ingressos QR Code */}
@@ -531,6 +535,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Inscrições em conferências e cursos com carteira digital de ingressos. O membro apresenta o QR Code na portaria para check-in instantâneo.
                 </p>
+                <a href="/eventos-ingressos" className="feature-link">Portaria ágil com QR Code →</a>
               </div>
 
               {/* 9. Dízimos & Ofertas */}
@@ -556,6 +561,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Espaço onde membros compartilham pedidos de oração e os irmãos interagem clicando em "Estou Orando por Você", gerando apoio mútuo.
                 </p>
+                <a href="/mural-oracao" className="feature-link">Conhecer o mural comunitário →</a>
               </div>
 
               {/* 11. Perfil & Carteirinha */}
@@ -568,6 +574,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
                 <p className="feature-text">
                   Identificação oficial de membro com foto nativa, histórico de batismo, congregação de vínculo e dados de contato atualizados.
                 </p>
+                <a href="/carteirinha-digital" className="feature-link">Carteirinha digital com foto oficial →</a>
               </div>
 
             </div>

@@ -46,6 +46,55 @@ const routes = [
     title: 'Gestão de Células, Pequenos Grupos e Escala de Voluntários | Faith Hub',
     description: 'Organize reuniões de células, relatórios de frequência, pedidos de oração e escalas de ministérios em tempo real com o Cell Workspace Studio do Faith Hub.',
     canonical: 'https://faithhubs.com/celulas'
+  },
+  {
+    path: '/eventos-ingressos',
+    outDir: 'dist/eventos-ingressos',
+    title: 'Ingressos Digitais e Portaria QR Code para Eventos da Igreja | Faith Hub',
+    description: 'Inscrições em conferências e congressos da igreja com QR Code na carteira digital dos membros, zero taxas abusivas e portaria ágil validada em 1 segundo.',
+    canonical: 'https://faithhubs.com/eventos-ingressos'
+  },
+  {
+    path: '/cantina-livraria',
+    outDir: 'dist/cantina-livraria',
+    title: 'Cantina e Livraria da Igreja: Cardápio Mobile e PDV com Kanban | Faith Hub',
+    description: 'Pedidos de lanches e livros da igreja pelo aplicativo com PIX integrado, fim das filas no intervalo e painel Kanban para organização da cozinha em tempo real.',
+    canonical: 'https://faithhubs.com/cantina-livraria'
+  },
+  {
+    path: '/visitantes',
+    outDir: 'dist/visitantes',
+    title: 'Recepção e Acolhimento de Visitantes na Igreja ("Sou Novo Aqui") | Faith Hub',
+    description: 'Recepção acolhedora e sem constrangimento para visitantes no aplicativo da igreja: preenchimento em 40 segundos, pedido de oração e pastoreio imediato.',
+    canonical: 'https://faithhubs.com/visitantes'
+  },
+  {
+    path: '/mural-oracao',
+    outDir: 'dist/mural-oracao',
+    title: 'Mural Comunitário de Oração e Intercessão Pastoral | Faith Hub',
+    description: 'Mural de oração interativo para a congregação: compartilhe motivos de oração, receba apoio com o botão "Estou Orando por Você" e envie pedidos sigilosos.',
+    canonical: 'https://faithhubs.com/mural-oracao'
+  },
+  {
+    path: '/carteirinha-digital',
+    outDir: 'dist/carteirinha-digital',
+    title: 'Carteirinha Digital de Membro com Foto e Validação QR | Faith Hub',
+    description: 'Credencial eclesiástica oficial gravada no celular do membro: foto oficial, histórico de batismo, congregação de vínculo e validação instantânea.',
+    canonical: 'https://faithhubs.com/carteirinha-digital'
+  },
+  {
+    path: '/cultos-ao-vivo',
+    outDir: 'dist/cultos-ao-vivo',
+    title: 'Cultos ao Vivo e Transmissões Online Sem Distrações | Faith Hub',
+    description: 'Transmita os cultos da sua igreja diretamente no aplicativo dos membros com banner pulsante "AO VIVO", player protegido e sem anúncios externos.',
+    canonical: 'https://faithhubs.com/cultos-ao-vivo'
+  },
+  {
+    path: '/devocionais',
+    outDir: 'dist/devocionais',
+    title: 'Devocionais Diários e Estudos Bíblicos no App da Igreja | Faith Hub',
+    description: 'Nutrição espiritual diária para toda a comunidade: meditações assinadas pelos pastores com versículo bíblico do dia, reflexão e oração guiada.',
+    canonical: 'https://faithhubs.com/devocionais'
   }
 ];
 
