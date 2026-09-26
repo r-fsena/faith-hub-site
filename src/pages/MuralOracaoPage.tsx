@@ -117,7 +117,7 @@ export const MuralOracaoPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* DORES RESOLVIDAS */}
-      <section className="section-module-details" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+      <section className="section-module-details dark-section">
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span className="badge-pill badge-admin" style={{ margin: '0 auto 12px' }}>Cuidado Pastoral</span>
@@ -161,11 +161,11 @@ export const MuralOracaoPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* FAQ */}
-      <section className="faq-section" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="faq-section" style={{ borderTop: '1px solid var(--border-color)', padding: '80px 0' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="badge-pill badge-free" style={{ margin: '0 auto 12px' }}>Dúvidas</span>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff' }}>Perguntas sobre o Mural de Oração</h2>
+            <h2 style={{ fontSize: '2.2rem', color: '#0f172a' }}>Perguntas sobre o Mural de Oração</h2>
           </div>
 
           <div className="faq-list" style={{ maxWidth: '820px', margin: '0 auto' }}>

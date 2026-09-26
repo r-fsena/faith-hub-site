@@ -121,7 +121,7 @@ export const DizimosPixPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* DORES RESOLVIDAS */}
-      <section className="section-module-details" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+      <section className="section-module-details dark-section">
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span className="badge-pill badge-free" style={{ margin: '0 auto 12px' }}>Fim da Burocracia</span>
@@ -169,7 +169,7 @@ export const DizimosPixPage: React.FC<Props> = ({ openWhatsAppLead }) => {
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span className="badge-pill badge-admin" style={{ margin: '0 auto 12px' }}>Funcionalidades</span>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '2.2rem', color: '#0f172a', marginBottom: '12px' }}>
               Transparência e Praticidade para Membros e Tesoureiros
             </h2>
           </div>
@@ -219,11 +219,11 @@ export const DizimosPixPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* FAQ */}
-      <section className="faq-section" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="faq-section" style={{ borderTop: '1px solid var(--border-color)', padding: '80px 0' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="badge-pill badge-free" style={{ margin: '0 auto 12px' }}>Tire suas dúvidas</span>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff' }}>Perguntas sobre Dízimos via PIX</h2>
+            <h2 style={{ fontSize: '2.2rem', color: '#0f172a' }}>Perguntas sobre Dízimos via PIX</h2>
           </div>
 
           <div className="faq-list" style={{ maxWidth: '820px', margin: '0 auto' }}>

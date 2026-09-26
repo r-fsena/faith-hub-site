@@ -125,7 +125,7 @@ export const KidsPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* DORES QUE O FAITH HUB RESOLVE */}
-      <section className="section-module-details" style={{ background: 'rgba(15, 23, 42, 0.6)' }}>
+      <section className="section-module-details dark-section">
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span className="badge-pill badge-admin" style={{ margin: '0 auto 12px' }}>Segurança Preventiva</span>
@@ -176,7 +176,7 @@ export const KidsPage: React.FC<Props> = ({ openWhatsAppLead }) => {
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span className="badge-pill badge-free" style={{ margin: '0 auto 12px' }}>Recursos Completos</span>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '2.2rem', color: '#0f172a', marginBottom: '12px' }}>
               Tudo o que a liderança do Ministério Infantil precisa
             </h2>
           </div>
@@ -246,11 +246,11 @@ export const KidsPage: React.FC<Props> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* FAQ ESPECÍFICO DO CHECK-IN KIDS */}
-      <section className="faq-section" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="faq-section" style={{ borderTop: '1px solid var(--border-color)', padding: '80px 0' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span className="badge-pill badge-admin" style={{ margin: '0 auto 12px' }}>Dúvidas Frequentes</span>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff' }}>Perguntas sobre o Módulo Kids</h2>
+            <h2 style={{ fontSize: '2.2rem', color: '#0f172a' }}>Perguntas sobre o Módulo Kids</h2>
           </div>
 
           <div className="faq-list" style={{ maxWidth: '820px', margin: '0 auto' }}>
