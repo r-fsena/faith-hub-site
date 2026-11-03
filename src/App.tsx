@@ -92,7 +92,7 @@ export function App({ initialPath }: AppProps = {}) {
 
       </main>
       <Footer openWhatsAppLead={openWhatsAppLead} />
-      <FloatingWhatsApp openWhatsAppLead={openWhatsAppLead} />
+      {!['/contratar','/teste-assistido','/ativacao'].includes(currentPath) && <FloatingWhatsApp openWhatsAppLead={openWhatsAppLead} />}
     </div>
   );
 }
