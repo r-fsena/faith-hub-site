@@ -1,0 +1,363 @@
+.acq-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 140px 24px 70px;
+  color: #19313b;
+}
+.acq-heading {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.acq-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #087c6d;
+  text-transform: uppercase;
+}
+.acq-heading h1,
+.acq-heading h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  margin: 13px 0 18px;
+}
+.acq-heading p {
+  color: #607786;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.acq-offers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.acq-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #dce9e8;
+  padding: 26px 22px;
+  border-radius: 20px;
+  box-shadow: 0 6px 28px #0c564307;
+  min-width: 0;
+}
+.acq-recommended {
+  border-color: #169a85;
+  box-shadow: 0 0 0 1px #169a8520;
+}
+.acq-offer h2 {
+  font-size: 25px;
+  margin: 0;
+}
+.acq-price {
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
+.acq-price small {
+  font-size: 13px;
+  font-weight: 500;
+  color: #647d89;
+}
+.acq-offer p,
+.acq-summary p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #647885;
+}
+.acq-offer ul,
+.acq-summary ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #4d6874;
+}
+.acq-offer ul {
+  flex: 1;
+}
+.acq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid #0f766e;
+  border-radius: 10px;
+  background: #0f766e;
+  color: white;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 750;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+}
+.acq-btn:hover:not(:disabled) {
+  background: #075e58;
+  color: white;
+}
+.acq-secondary {
+  color: #0f766e;
+  background: white;
+}
+.acq-secondary:hover:not(:disabled) {
+  background: #edfaf5;
+  color: #075e58;
+}
+.acq-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.acq-link {
+  display: inline-block;
+  background: none;
+  color: #08796b;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 14px;
+  cursor: pointer;
+}
+.acq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  max-width: 1000px;
+  margin: auto;
+  gap: 28px;
+  align-items: start;
+}
+.acq-form-card {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #dfebe8;
+  border-radius: 20px;
+  min-width: 0;
+}
+.acq-form-card h2 {
+  font-size: 25px;
+  letter-spacing: -0.03em;
+  margin: 10px 0 22px;
+}
+.acq-form-card form {
+  display: grid;
+  gap: 18px;
+}
+.acq-form-card label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #3d5965;
+}
+.acq-form-card input:not([type="checkbox"]),
+.acq-form-card select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #cddedc;
+  border-radius: 9px;
+  background: white;
+  color: #203c46;
+  font: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.acq-form-card small,
+.acq-note {
+  color: #6c8290;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.acq-form-card .acq-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.acq-check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: #0f766e;
+}
+.acq-check a {
+  text-decoration: underline;
+  color: #08796b;
+}
+.acq-summary {
+  background: #ecf8f3;
+  border: 1px solid #d2e9df;
+  border-radius: 20px;
+  padding: 27px;
+  position: sticky;
+  top: 110px;
+}
+.acq-summary h2 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+.acq-summary .acq-price {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+.acq-summary ul {
+  border-top: 1px solid #cfe4db;
+  border-bottom: 1px solid #cfe4db;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+.acq-error {
+  padding: 14px 16px;
+  margin-top: 20px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 10px;
+  color: #9f1239;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.acq-step {
+  font-size: 12px;
+  color: #488271;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.acq-status {
+  display: grid;
+  gap: 17px;
+  line-height: 1.8;
+}
+.acq-status p {
+  color: #526e7b;
+  font-size: 15px;
+}
+.acq-status details {
+  border-top: 1px solid #dce8e4;
+  padding-top: 16px;
+}
+.acq-status details label,
+.acq-status details button {
+  margin-top: 15px;
+}
+.acq-status summary {
+  cursor: pointer;
+  color: #08796b;
+  font-weight: 700;
+}
+.acq-page :is(button, a, input, select, summary):focus-visible {
+  outline: 3px solid #16a08580;
+  outline-offset: 3px;
+}
+.acq-conditions {
+  max-width: 800px;
+  padding-top: 140px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  line-height: 1.85;
+  color: #334e5c;
+}
+.acq-conditions h1 {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+.acq-conditions h2 {
+  margin: 24px 0 8px;
+}
+.acq-public-callout {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 35px 24px;
+  background: #edfaf5;
+  border: 1px solid #d7ebe2;
+  border-radius: 20px;
+  text-align: center;
+}
+.acq-public-callout h2 {
+  margin-bottom: 15px;
+}
+.acq-public-callout > div {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.acq-public-callout .acq-btn {
+  width: auto;
+}
+.home-content #planos .acq-page {
+  padding: 0;
+}
+.home-content #planos {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (max-width: 1100px) {
+  .acq-offers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .acq-page {
+    padding-top: 115px;
+  }
+  .acq-layout {
+    grid-template-columns: 1fr;
+  }
+  .acq-summary {
+    position: static;
+    grid-row: 1;
+  }
+  .acq-summary ul {
+    display: none;
+  }
+  .acq-heading p {
+    font-size: 15px;
+  }
+  .acq-form-card {
+    padding: 24px;
+  }
+  .acq-summary {
+    padding: 22px;
+  }
+  .acq-conditions {
+    padding: 120px 22px 50px;
+  }
+  .acq-public-callout {
+    margin: 30px 18px;
+  }
+  .acq-public-callout > div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 520px) {
+  .acq-offers {
+    grid-template-columns: 1fr;
+  }
+  .acq-page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .acq-heading {
+    margin-bottom: 28px;
+  }
+  .acq-offer {
+    padding: 25px;
+  }
+  .acq-form-card {
+    padding: 22px;
+  }
+}

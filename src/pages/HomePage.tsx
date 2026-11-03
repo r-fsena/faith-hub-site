@@ -31,6 +31,7 @@ import {
   Users
 } from 'lucide-react';
 import '../App.css';
+import { AcquisitionPage } from './AcquisitionPage';
 
 import mockupImg from '../assets/app-mockup.png';
 
@@ -76,9 +77,9 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
             <div className="hero-actions animate-fade-in-up">
               <button
                 className="btn btn-primary"
-                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.location.assign('/planos')}
               >
-                Solicitar Demonstração VIP
+                Escolher meu plano
                 <ArrowRight size={18} />
               </button>
               <button
@@ -251,129 +252,7 @@ export const HomePage: React.FC<HomePageProps> = ({ openWhatsAppLead }) => {
       </section>
 
       {/* SEÇÃO NOVA: PLANOS POR PORTE DE IGREJA */}
-      <section className="section" id="planos">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <span style={{ fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.08em', color: '#0F766E', textTransform: 'uppercase', background: 'rgba(15, 118, 110, 0.1)', padding: '6px 16px', borderRadius: 999 }}>
-            Escalabilidade Real
-          </span>
-          <h2 className="section-title" style={{ marginTop: '14px' }}>
-            Do primeiro clique à sua rede de campi
-          </h2>
-          <p className="section-subtitle">
-            Sua igreja de 80 membros não precisa das mesmas telas que uma rede de 12 campi — e não deveria pagar por elas. O Faith Hub cresce junto com a sua estrutura.
-          </p>
-
-          <div className="plans-grid">
-            {/* Card 1: Entrada */}
-            <div className="plan-card">
-              <span className="plan-card-tag">Plano Entrada</span>
-              <h3 className="plan-title">Entrada</h3>
-              <p className="plan-headline">"Para igrejas começando a sair do papel e do grupo de WhatsApp"</p>
-              <p className="plan-desc">
-                Membros, células, devocional diário e mural de oração, com dízimo via PIX oficial. O básico bem feito, sem excesso de tela e com máxima simplicidade.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> App do Membro (PWA) instantâneo
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Bíblia Sagrada 100% Offline
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Células & Mural de Oração
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Dízimos com PIX oficial
-                </div>
-              </div>
-              <button
-                type="button"
-                className="btn btn-outline"
-                style={{ width: '100%' }}
-                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver se este plano se encaixa
-              </button>
-            </div>
-
-            {/* Card 2: Crescimento */}
-            <div className="plan-card highlight">
-              <span className="plan-card-tag featured">Mais Procurado</span>
-              <h3 className="plan-title">Crescimento</h3>
-              <p className="plan-headline">"Para igrejas com culto infantil estruturado e agenda de eventos"</p>
-              <p className="plan-desc">
-                Tudo do plano Entrada + Ministério Kids completo com totem de check-in, crachás digitais, ingressos de eventos com QR Code e cantina mobile com Kanban de pedidos.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Tudo do Plano Entrada
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Totem de Check-in Kids & Alertas
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Ticketing & Portaria QR Code
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Cantina com PDV & Pedidos
-                </div>
-              </div>
-              <button
-                type="button"
-                className="btn btn-primary"
-                style={{ width: '100%' }}
-                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver se este plano se encaixa
-              </button>
-            </div>
-
-            {/* Card 3: Rede / Multi-campus */}
-            <div className="plan-card">
-              <span className="plan-card-tag">Multi-Campi</span>
-              <h3 className="plan-title">Rede / Multi-campus</h3>
-              <p className="plan-headline">"Para redes, convenções e igrejas com múltiplas unidades"</p>
-              <p className="plan-desc">
-                Tudo do plano Crescimento + governança multi-campi integrada, painel de salas do Kids ao vivo, chamado de emergência automatizado e trilha de auditoria para o conselho.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26, fontSize: '0.86rem', color: '#0F172A' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Tudo do Plano Crescimento
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Gestão Multi-Campus & Filiais
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Trilha de Auditoria Forense
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <CheckCircle2 size={16} color="#0F766E" /> Salas Kids ao Vivo & Alertas
-                </div>
-              </div>
-              <button
-                type="button"
-                className="btn btn-outline"
-                style={{ width: '100%' }}
-                onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver se este plano se encaixa
-              </button>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '2.5rem' }}>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' })}
-              style={{ padding: '14px 28px' }}
-            >
-              Ver qual plano se encaixa na sua igreja
-              <ArrowRight size={18} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <section className="section" id="planos"><AcquisitionPage plansOnly /></section>
 
       {/* SEÇÃO INTERATIVA: TODAS AS FUNCIONALIDADES DETALHADAS */}
       <section className="section" id="ecossistema">

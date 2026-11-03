@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ openWhatsAppLead, isHome = true 
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ openWhatsAppLead, isHome = true 
     }, 200);
   };
 
-  const handleActionClick = () => {
-    if (isHome) {
-      document.getElementById('demonstracao')?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      openWhatsAppLead('Olá! Gostaria de falar com um especialista e agendar uma demonstração do Faith Hub.');
-    }
-  };
+  const handleActionClick = () => { window.location.assign('/planos'); };
 
   const getHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
@@ -274,7 +268,7 @@ export const Header: React.FC<HeaderProps> = ({ openWhatsAppLead, isHome = true 
             style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem' }}
             onClick={handleActionClick}
           >
-            Falar com Especialista
+            Ver planos e contratar
           </button>
         </div>
       </nav>

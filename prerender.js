@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const routes = [
+  ...['planos','contratar','teste-assistido','ativacao','condicoes-de-contratacao'].map(route=>({path:'/'+route,outDir:'dist/'+route,title:route==='planos'?'Planos e preços Faith Hubs':'Comece com Faith Hubs',description:'Contrate Faith Hubs ou solicite o teste assistido do Conectar por 14 dias.',canonical:'https://faithhubs.com/'+route})),
   {
     path: '/',
     outDir: 'dist',

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import { AcquisitionPage } from './pages/AcquisitionPage';
+import { ConditionsPage } from './pages/ConditionsPage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -47,6 +49,11 @@ export function App({ initialPath }: AppProps = {}) {
 
   const renderContent = () => {
     switch (currentPath) {
+      case '/planos': return <AcquisitionPage plansOnly />;
+      case '/contratar':
+      case '/teste-assistido':
+      case '/ativacao': return <AcquisitionPage />;
+      case '/condicoes-de-contratacao': return <ConditionsPage />;
       case '/kids':
         return <KidsPage openWhatsAppLead={openWhatsAppLead} />;
       case '/dizimos-pix':
@@ -81,6 +88,8 @@ export function App({ initialPath }: AppProps = {}) {
       <Header openWhatsAppLead={openWhatsAppLead} isHome={isHome} />
       <main id="main-content">
         {renderContent()}
+        {!isHome && !['/planos','/contratar','/teste-assistido','/ativacao','/condicoes-de-contratacao'].includes(currentPath) && <section className="acq-public-callout"><h2>Leve essa experiência para sua igreja</h2><p>Contrate uma oferta ou solicite o teste assistido de 14 dias do Conectar.</p><div><a className="acq-btn" href={`/planos?origem=${encodeURIComponent(currentPath)}`}>Conhecer os planos</a><a className="acq-btn acq-secondary" href={`/teste-assistido?origem=${encodeURIComponent(currentPath)}`}>Solicitar teste Conectar</a></div></section>}
+
       </main>
       <Footer openWhatsAppLead={openWhatsAppLead} />
       <FloatingWhatsApp openWhatsAppLead={openWhatsAppLead} />
